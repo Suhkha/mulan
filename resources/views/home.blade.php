@@ -10,6 +10,7 @@
                 <div class="panel-body">
                     @component('components.who')
                     @endcomponent
+                    {{trans('words.page_title')}}
                 </div>
             </div>
         </div>
