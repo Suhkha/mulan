@@ -81,8 +81,21 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <div class="panel">
-                            <a href="{{ url('/login/en') }}">English</a>
-                            <a href="{{ url('/login/es') }}">Spanish</a>
+                           
+                            <form action="changelocale" class="form-inline" method="post">
+                            {{ csrf_field() }}
+                               <div class="form-group @if($errors->first('locale')) has-error @endif">
+                                   <span aria-hidden="true"><i class="fa fa-flag"></i></span>
+                                    Select language/Seleccionar idioma
+                                   <select name="locale" id="locale" onchange="this.form.submit()">
+                                       <option value="">{{\App::getLocale()}}</option>
+                                       <option value="es">ES</option>
+                                       <option value="en">EN</option>
+                                   </select>
+                                   <small class="text-danger">{{ $errors->first('locale') }}</small>
+                               </div>
+
+                           </form>
                         </div>
                     </div>
                 </div>
