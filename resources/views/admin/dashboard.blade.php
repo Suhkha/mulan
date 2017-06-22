@@ -1,18 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.inner--layout-admin')
+@section('title-section-admin')Dashboard @stop
 
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard ADMIN</div>
-
-                <div class="panel-body">
-                    @component('components.who')
-                    @endcomponent
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+@section('content-admin')
+	
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam mollitia ducimus corporis enim, sapiente aliquam, consectetur quis ad fugiat nostrum repellendus, dolore eius nulla. Ipsum error minus veniam maiores minima.
+	
 @endsection
