@@ -1,8 +1,8 @@
-@section('title-section')Ventas @stop
-
 @extends('layouts.inner--layout-admin')
+@section('title-section-admin')Ventas @stop
 
-@section('content')
-@include('includes.menu')
-ventas
+@section('content-admin')
+	
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam mollitia ducimus corporis enim, sapiente aliquam, consectetur quis ad fugiat nostrum repellendus, dolore eius nulla. Ipsum error minus veniam maiores minima.
+	
 @endsection
