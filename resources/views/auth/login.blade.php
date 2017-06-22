@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-{{  $lang = Session::get ('locale') }}
-{{trans('login.title_login_form')}}
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">

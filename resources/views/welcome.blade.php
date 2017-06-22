@@ -94,7 +94,6 @@
                                    </select>
                                    <small class="text-danger">{{ $errors->first('locale') }}</small>
                                </div>
-
                            </form>
                         </div>
                     </div>
