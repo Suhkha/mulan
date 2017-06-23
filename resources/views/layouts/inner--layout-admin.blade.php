@@ -3,17 +3,16 @@
 @include('includes.menu')
 
 @section('inner--layout-admin')
-	<div class="container">
-	    <div class="row">
-	        <div class="col-md-8 col-md-offset-2">
-	            <div class="panel panel-primary">
-	                <div class="panel-heading">@yield('title-section-admin')</div>
-
-	                <div class="panel-body">
-	                	@yield('content-admin')
-	                </div>
-	            </div>
-	        </div>
-	    </div>
+<main class="container" id="clientes">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">@yield('title-section-admin')</h3>
+		</div>
+		<div class="panel-body">
+			<div class="panel-body">
+				@yield('content-admin')
+			</div>
+		</div>
 	</div>
+</main>   
 @show
