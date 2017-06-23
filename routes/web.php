@@ -39,9 +39,10 @@ Route::prefix('admin')->group(function(){
 	Route::get('/password/reset/{token}', 'Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');
 
 	// Customers
-	Route::get('/customers', 'CustomerController@index')->name('admin.customers');
-	Route::get('/new', 'CustomerController@create')->name('admin.customers.new');
-
+	Route::prefix('customers')->group(function(){
+		Route::get('/all', 'CustomerController@index')->name('admin.customers.index');
+		Route::get('/new', 'CustomerController@create')->name('admin.customers.new');
+	});
 
 
 });

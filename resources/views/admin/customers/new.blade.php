@@ -1,5 +1,5 @@
 @extends('layouts.inner--layout-admin')
-@section('title-section-admin')Nuevo cliente@stop
+@section('title-section-admin')Nuevo cliente @stop
 
 @section('content-admin')
 	
