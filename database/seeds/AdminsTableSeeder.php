@@ -17,7 +17,7 @@ class AdminsTableSeeder extends Seeder
             $main_admin = new Admin();
             $main_admin->name = "Admin";
             $main_admin->email = "admin@newsite.com";
-            $main_admin->password = crypt("hands", "");
+            $main_admin->password = crypt("hands2017", "");
             $main_admin->save();
 
     }
