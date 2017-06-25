@@ -8,9 +8,7 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    @component('components.who')
-                    @endcomponent
-                    {{trans('words.page_title')}}
+                    {{trans('login.title_login_form')}}
                 </div>
             </div>
         </div>
