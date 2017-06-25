@@ -50,6 +50,8 @@
                             </div>
                         </div>
                     </form>
+
+                    <a href="{{ url('/auth/facebook') }}">Ingresar con facebook</a>
                 </div>
             </div>
         </div>

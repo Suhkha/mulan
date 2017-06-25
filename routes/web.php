@@ -20,9 +20,13 @@ Auth::routes();
 
 Route::post('changelocale', 'LanguageController@index')->name('changelocale');
 
-Route::get('/home/{locale}', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/users/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 
+
+//Facebook Connect
+Route::get('auth/facebook', 'FacebookController@redirectToProvider');
+Route::get('auth/facebook/callback', 'FacebookController@handleProviderCallback');
 
 ////////////////////////////////// A D M I N //////////////////////////////////////////////////
 
