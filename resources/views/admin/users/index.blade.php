@@ -23,8 +23,20 @@
 					<td>{{$user->id}}</td>
 					<td>{{$user->name}}</td>
 					<td>{{$user->email}}</td>
-					<td>{{$user->phone}}</td>
-					<td>Sí</td>
+					<td>
+						@if($user->phone != null)
+							{{ $user->phone }}
+						@else
+							No
+						@endif
+					</td>
+					<td>
+						@if($user->facebook_id != null)
+							Sí
+						@else
+							No
+						@endif
+					</td>
 					<td><a href="">Direcciones</a></td>
 					<td><a href="">Editar</a></td>
 					<td><input type="checkbox"></td>

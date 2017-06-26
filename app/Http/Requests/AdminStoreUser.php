@@ -28,7 +28,6 @@ class AdminStoreUser extends FormRequest
             'email' => 'required|unique:users',
             'phone' => 'required',
             'name' => 'required',
-            'password' => 'required'
         ];
     }
 }

@@ -7,8 +7,8 @@
 		{{ csrf_field() }}
 		<fieldset>
 			<div class="form-group">
-				<label for="inputName" class="col-lg-2 control-label">Nombre</label>
-				<div class="col-lg-3">
+				<label for="inputName" class="col-lg-2 col-lg-offset-2 control-label">Nombre</label>
+				<div class="col-lg-6">
 					<input type="text" class="form-control" id="inputName" name="name" placeholder="Nombre completo">
 					@if ($errors->has('name'))
 					    <span class="help-block">
@@ -16,9 +16,10 @@
 					    </span>
 					@endif
 				</div>
-
-				<label for="inputEmail" class="col-lg-2 control-label">Email</label>
-				<div class="col-lg-3">
+			</div>
+			<div class="form-group">
+				<label for="inputEmail" class="col-lg-2 col-lg-offset-2 control-label">Email</label>
+				<div class="col-lg-6">
 					<input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email">
 					@if ($errors->has('email'))
 					    <span class="help-block">
@@ -28,22 +29,12 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="inputPhone" class="col-lg-2 control-label">Teléfono</label>
-				<div class="col-lg-3">
+				<label for="inputPhone" class="col-lg-2 col-lg-offset-2 control-label">Teléfono</label>
+				<div class="col-lg-6">
 					<input type="text" class="form-control" id="inputPhone" name="phone" placeholder="Teléfono">
 					@if ($errors->has('phone'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('phone') }}</strong>
-					    </span>
-					@endif
-				</div>
-
-				<label for="inputPassword" class="col-lg-2 control-label">Password</label>
-				<div class="col-lg-3">
-					<input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password">
-					@if ($errors->has('password'))
-					    <span class="help-block">
-					        <strong>{{ $errors->first('password') }}</strong>
 					    </span>
 					@endif
 				</div>

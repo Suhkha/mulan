@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests\AdminStoreUser;
 use App\User;
+use Mail;
+use App\Mail\AdminSendProvisionalPassword;
 
 class UserController extends Controller
 {
@@ -25,7 +27,10 @@ class UserController extends Controller
     }
 
     public function store(AdminStoreUser $request){
-    	User::create($request->all());
+    	$user = User::create($request->all());
+
+        Mail::to($user)->send(new AdminSendProvisionalPassword($user));
+
     	return redirect()->route('admin.users.index');
     }
 }

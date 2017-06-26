@@ -14,7 +14,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Ventas <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Clientes</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Clientes <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="">Nuevo Cliente</a></li>
+                            <li><a href="">Ver Todo</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#">Categorias</a></li>
                     <li><a href="#">Artesanos</a></li>
                     <li><a href="#">Productos</a></li>
