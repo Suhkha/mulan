@@ -1,8 +1,8 @@
 @extends('layouts.inner--layout-admin')
-@section('title-section-admin')Direcciones @stop
+@section('title-section-admin')Direcciones <a href="javascript:history.back()" class="right"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Regresar</a> @stop
 
 @section('content-admin')
-	<a href="" class="right">Agregar nueva dirección</a>
+		<a href="{{url('/admin/users/new-address/'.$id)}}" class="space-bottom link">Agregar nueva dirección</a>
 	<div class="table-responsive">
 		<table class="table table-responsive table-striped table-hover ">
 			<thead>
@@ -15,6 +15,8 @@
 					<th>Ciudad</th>
 					<th>Estado/Provincia/Región</th>
 					<th>C.P.</th>
+					<th></th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -28,6 +30,7 @@
 					<td>{{ $address->city }}</td>
 					<td>{{ $address->state }}</td>
 					<td>{{ $address->zip }}<td>
+					<td><a href="">Editar</a></td>
 					<td><a href="">Eliminar</a></td>
 				</tr>
 			@endforeach

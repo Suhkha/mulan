@@ -18,6 +18,7 @@
     </div>
 
     <!-- Scripts -->
+    <script src="https://use.fontawesome.com/516987e026.js"></script>
     <script src="{{ asset('js/admin-vendor.min.js') }}"></script>
 </body>
 </html>

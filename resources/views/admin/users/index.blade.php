@@ -12,9 +12,9 @@
 					<th>Email</th>
 					<th>Teléfono</th>
 					<th>Facebook</th>
-					<th>Direcciones</th>
-					<th>Editar</th>
-					<th>Activo</th>
+					<th></th>
+					<th></th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -39,8 +39,8 @@
 							@endif
 						</td>
 						<td><a href="{{url('/admin/users/address/'.$user->id)}}">Direcciones</a></td>
-						<td><a href="">Editar</a></td>
-						<td><input type="checkbox"></td>
+						<td><a href="{{url('/admin/users/edit/'.$user->id)}}">Editar</a></td>
+						<td><a href="">Eliminar</a></td>
 					</tr>
 				@endforeach
 			@else
