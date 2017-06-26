@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Test</title>
+    <title>Bienvenido(a)/Welcome</title>
     <style>
 		
         #outlook a {padding:0;}     
@@ -70,7 +70,7 @@
 
                 <table border="0" cellpadding="0" cellspacing="0" class="100p" width="640">
                     <tr>
-                        <td valign="top"><img alt="" border="0" class="100p" src="http://placehold.it/640x170" style="display:block"></td>
+                        <td valign="top"><img alt="" border="0" class="100p" src="https://scontent-dft4-3.xx.fbcdn.net/v/t1.0-9/17951862_1350135328410909_2429824839609755856_n.jpg?oh=0b857b47852f8c6bbf4b1b19a80f5770&oe=59C46428" style="display:block"></td>
                     </tr>
                 </table>
 
@@ -112,122 +112,6 @@
                                 </tr>
                             </table>
                         </td>
-                    </tr>
-                </table>
-
-                <table border="0" cellpadding="0" cellspacing="0" class="100p" width="640">
-                    <tr>
-                        <td height="20"></td>
-                    </tr>
-                </table>
-
-                <table border="0" cellpadding="0" cellspacing="0" class="100p" width="640">
-                    <tr>
-                        <td align="center" valign="top">
-                            <table border="0" cellpadding="0" cellspacing="0" class="100p" width="640">
-                                <tr>
-                                    <td align="left" class="mobile-column-blog" valign="top">
-                                        <table align="left" border="0" cellpadding="20" cellspacing="0" class="mob-column" style="background-color: #E4E4E5" width="310">
-                                            <tr>
-                                                <td valign="top">
-                                                    <table border="0" cellpadding="0" cellspacing="0">
-                                                        <tr>
-                                                            <td align="center" valign="top"><img alt="" border="0" class="100p-mob" src="http://placehold.it/270x170" style="display:block"></td>
-                                                        </tr>
-
-                                                        <tr>
-                                                            <td height="20"></td>
-                                                        </tr>
-
-                                                        <tr>
-                                                            <td valign="top">
-                                                                <table border="0" cellpadding="0" cellspacing="0">
-                                                                    <tr>
-                                                                        <td align="left" colspan="3" style="font-size:14px; color:#272425; font-family:Arial, Helvetica, sans-serif;" class="font-bump">
-                                                                            Authors often misinterpret the beach as a sloping defense, when in actuality it feels more like an alert art. Some assert that few can name a bristly armadillo that isn't a lamblike suede. A pear is a religion from the right perspective...<br>
-                                                                            <br>
-                                                                            <a href="##" style="color:#; text-decoration:none;">
-                                                                            <table border="0" cellpadding="5" cellspacing="0" class="100p" style="background-color: #808080">
-                                                                                <tr>
-                                                                                    <td align="center" style="font-size:16px; color:#FFFFFF; font-family:Arial, Helvetica, sans-serif;" class="link-bump">Read More <span style="color:#ad2f70; font-weight:bold;">»</span></td>
-                                                                                </tr>
-                                                                            </table></a>
-                                                                        </td>
-                                                                    </tr>
-                                                                </table>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-
-                                    <td align="left" class="mobile-column" valign="top">
-                                        <table align="left" border="0" cellpadding="0" cellspacing="0" class="mob-column" width="20">
-                                            <tr>
-                                                <td align="left" height="20">&nbsp;</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-
-                                    <td align="left" class="mobile-column-blog" valign="top">
-                                        <table align="left" border="0" cellpadding="20" cellspacing="0" class="mob-column" style="background-color: #E4E4E5" width="310">
-                                            <tr>
-                                                <td valign="top">
-                                                    <table border="0" cellpadding="0" cellspacing="0">
-                                                        <tr>
-                                                            <td align="center" valign="top"><img alt="" border="0" class="100p-mob" src="http://placehold.it/270x170" style="display:block"></td>
-                                                        </tr>
-
-                                                        <tr>
-                                                            <td height="20"></td>
-                                                        </tr>
-
-                                                        <tr>
-                                                            <td valign="top">
-                                                                <table border="0" cellpadding="0" cellspacing="0">
-                                                                    <tr>
-                                                                        <td align="left" colspan="3" style="font-size:14px; color:#272425; font-family:Arial, Helvetica, sans-serif;" class="font-bump">
-                                                                            Authors often misinterpret the beach as a sloping defense, when in actuality it feels more like an alert art. Some assert that few can name a bristly armadillo that isn't a lamblike suede. A pear is a religion from the right perspective...<br>
-                                                                            <br>
-                                                                            <a href="##" style="color:#; text-decoration:none;">
-                                                                            <table border="0" cellpadding="5" cellspacing="0" class="100p" style="background-color: #808080">
-                                                                                <tr>
-                                                                                    <td align="center" style="font-size:16px; color:#FFFFFF; font-family:Arial, Helvetica, sans-serif;" class="link-bump">Read More <span style="color:#ad2f70; font-weight:bold;">»</span></td>
-                                                                                </tr>
-                                                                            </table></a>
-                                                                        </td>
-                                                                    </tr>
-                                                                </table>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
-
-                <table border="0" cellpadding="0" cellspacing="0" class="100p" width="640">
-                    <tr>
-                        <td height="20"></td>
-                    </tr>
-                </table>
-
-                <table border="0" cellpadding="0" cellspacing="0" class="100p" width="640">
-                    <tr>
-                        <td valign="top"><img alt="" border="0" class="100p" src="http://placehold.it/640x100" style="display:block"></td>
-                    </tr>
-                </table>
-
-                <table border="0" cellpadding="0" cellspacing="0" class="100p" width="640">
-                    <tr>
-                        <td height="20"></td>
                     </tr>
                 </table>
             </td>

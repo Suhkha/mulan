@@ -17,8 +17,8 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Clientes <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="">Nuevo Cliente</a></li>
-                            <li><a href="">Ver Todo</a></li>
+                            <li><a href="{{url('/admin/users/new')}}">Nuevo Cliente</a></li>
+                            <li><a href="{{url('/admin/users/all')}}">Ver Todo</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Categorias</a></li>

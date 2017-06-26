@@ -1,0 +1,87 @@
+@extends('layouts.inner--layout-admin')
+@section('title-section-admin')Nuevo cliente @stop
+
+@section('content-admin')
+	
+	<form class="form-horizontal" method="post" action="{{ route('admin.users.submit') }}">
+		{{ csrf_field() }}
+		<fieldset>
+			<div class="form-group">
+				<label for="inputName" class="col-lg-2 col-lg-offset-2 control-label">Nombre</label>
+				<div class="col-lg-6">
+					<input type="text" class="form-control" id="inputName" name="name" placeholder="Ejemp.: Dirección de mi casa...">
+					@if ($errors->has('name'))
+					    <span class="help-block">
+					        <strong>{{ $errors->first('name') }}</strong>
+					    </span>
+					@endif
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputAddress" class="col-lg-2 col-lg-offset-2 control-label">Calle y número</label>
+				<div class="col-lg-3">
+					<input type="text" class="form-control" id="inputAddress" name="address" placeholder="Calle y número">
+					@if ($errors->has('address'))
+					    <span class="help-block">
+					        <strong>{{ $errors->first('address') }}</strong>
+					    </span>
+					@endif
+				</div>
+
+				<label for="inputAddress2" class="col-lg-2 col-lg-offset-2 control-label">Colonia/Localidad</label>
+				<div class="col-lg-3">
+					<input type="text" class="form-control" id="inputAddress2" name="address2" placeholder="Colonia/Localidad">
+					@if ($errors->has('address2'))
+					    <span class="help-block">
+					        <strong>{{ $errors->first('address2') }}</strong>
+					    </span>
+					@endif
+				</div>
+			</div>
+			<div class="form-group">
+
+				<label for="inputZip" class="col-lg-2 col-lg-offset-2 control-label">Código Postal</label>
+				<div class="col-lg-3">
+					<input type="text" class="form-control" id="inputZip" name="zip" placeholder="Código Postal">
+					@if ($errors->has('zip'))
+					    <span class="help-block">
+					        <strong>{{ $errors->first('zip') }}</strong>
+					    </span>
+					@endif
+				</div>
+
+				<label for="inputCity" class="col-lg-2 col-lg-offset-2 control-label">Ciudad</label>
+				<div class="col-lg-3">
+					<input type="text" class="form-control" id="inputCity" name="city" placeholder="Ciudad">
+					@if ($errors->has('city'))
+					    <span class="help-block">
+					        <strong>{{ $errors->first('city') }}</strong>
+					    </span>
+					@endif
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputState" class="col-lg-2 col-lg-offset-2 control-label">Estado/Provincia/Región</label>
+				<div class="col-lg-3">
+					<input type="text" class="form-control" id="inputState" name="city" placeholder="Estado/Provincia/Región">
+					@if ($errors->has('city'))
+					    <span class="help-block">
+					        <strong>{{ $errors->first('city') }}</strong>
+					    </span>
+					@endif
+				</div>
+				<label for="inputCountry" class="col-lg-2 col-lg-offset-2 control-label">País</label>
+				<div class="col-lg-3">
+					<input type="text" class="form-control" id="inputCountry" name="country" placeholder="País">
+					@if ($errors->has('country'))
+					    <span class="help-block">
+					        <strong>{{ $errors->first('country') }}</strong>
+					    </span>
+					@endif
+				</div>
+			</div>
+			<button type="submit" class="btn btn-default col-lg-offset-11">Guardar</button>
+		</fieldset>
+	</form>
+	
+@endsection

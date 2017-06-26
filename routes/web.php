@@ -47,6 +47,9 @@ Route::prefix('admin')->group(function(){
 		Route::get('/all', 'Admin\UserController@index')->name('admin.users.index');
 		Route::get('/new', 'Admin\UserController@create')->name('admin.users.new');
 		Route::post('/submit', 'Admin\UserController@store')->name('admin.users.submit');
+
+		Route::get('/new-address/{id}', 'Admin\UserAddressController@create')->name('admin.users.new-address');
+		Route::get('/address/{id}', 'Admin\UserAddressController@show')->name('admin.users.address');
 	});
 
 

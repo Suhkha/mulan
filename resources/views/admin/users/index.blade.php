@@ -18,32 +18,39 @@
 				</tr>
 			</thead>
 			<tbody>
-			@foreach($users as $user)
-				<tr>
-					<td>{{$user->id}}</td>
-					<td>{{$user->name}}</td>
-					<td>{{$user->email}}</td>
-					<td>
-						@if($user->phone != null)
-							{{ $user->phone }}
-						@else
-							No
-						@endif
-					</td>
-					<td>
-						@if($user->facebook_id != null)
-							Sí
-						@else
-							No
-						@endif
-					</td>
-					<td><a href="">Direcciones</a></td>
-					<td><a href="">Editar</a></td>
-					<td><input type="checkbox"></td>
-				</tr>
-			@endforeach
+			@if(count($users) > 0)
+				@foreach($users as $user)
+					<tr>
+						<td>{{$user->id}}</td>
+						<td>{{$user->name}}</td>
+						<td>{{$user->email}}</td>
+						<td>
+							@if($user->phone != null)
+								{{ $user->phone }}
+							@else
+								No
+							@endif
+						</td>
+						<td>
+							@if($user->facebook_id != null)
+								Sí
+							@else
+								No
+							@endif
+						</td>
+						<td><a href="{{url('/admin/users/address/'.$user->id)}}">Direcciones</a></td>
+						<td><a href="">Editar</a></td>
+						<td><input type="checkbox"></td>
+					</tr>
+				@endforeach
+			@else
+				No hay resultadoss
+			@endif
 			</tbody>
 		</table> 
+
+		{{ $users->links() }}
+		
 	</div>
 	
 @endsection
