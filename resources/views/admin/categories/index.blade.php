@@ -27,9 +27,10 @@
 						<td>{{$category->id}}</td>
 						<td>{{$category->name}}</td>
 						<td>
-
-						<input type="checkbox" name="status">
-
+							<form method="post" action="{{ url('/admin/categories/delete/'.$category->id) }}">
+								<input type="checkbox"  onClick="this.form.submit()" {{ $category->status ? 'checked' : '' }} />
+								<input type="hidden" name="id" value="{{ $user->id }}">
+							</form>
 						</td>
 						<td><a href="{{url('/admin/categories/edit/'.$category->id)}}">Editar</a></td>
 						<td>
