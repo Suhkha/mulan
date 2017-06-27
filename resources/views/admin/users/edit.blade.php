@@ -3,9 +3,8 @@
 
 @section('content-admin')
 	
-	<form class="form-horizontal" method="post" action="{{ route('admin.users.update') }}">
+	<form class="form-horizontal" method="post" action="{{ url('admin/users/update/'.$user->id) }}">
 		{{ csrf_field() }}
-		<input type="hidden" value="{{ $user->id }}" name="id">
 		<fieldset>
 			<div class="form-group">
 				<label for="inputName" class="col-lg-2 col-lg-offset-2 control-label">Nombre</label>

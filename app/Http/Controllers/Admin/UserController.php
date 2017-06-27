@@ -29,17 +29,23 @@ class UserController extends Controller
     public function store(AdminStoreUser $request){
     	$user = User::create($request->all());
         Mail::to($user)->send(new AdminSendProvisionalPassword($user));
-    	return redirect()->route('admin.users.index');
+    	return redirect()->route('admin.users.index')->with('success', 'Usuario guardado correctamente.');
     }
 
     public function edit($id){
         $user = User::find($id);
-        return view('admin.users.edit')->with('user',$user);
+        return view('admin.users.edit')->with('user', $user);
     }
 
     public function update(Request $request, $id){
-        return $id;
-       // $user = User::find($id)->update($request->all());
-       // return view('admin.users.index');
+        User::where('id', $id)->update($request->except('_token'));
+        return redirect()->route('admin.users.index')->with('success', 'Usuario actualizado correctamente.');
     }
+
+    public function delete($id){
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->route('admin.users.index')->with('success', 'Usuario eliminado correctamente.');
+    }
+
 }
