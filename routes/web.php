@@ -54,10 +54,18 @@ Route::prefix('admin')->group(function(){
 		Route::get('/new-address/{id}', 'Admin\UserAddressController@create')->name('admin.users.address.new');
 		Route::get('/address/{id}', 'Admin\UserAddressController@show')->name('admin.users.address');
 		Route::post('/address-store', 'Admin\UserAddressController@store')->name('admin.users.address.store');
-
 		Route::get('/address-edit/{id}', 'Admin\UserAddressController@edit')->name('admin.users.address.edit');
 		Route::post('/address-update/{id}', 'Admin\UserAddressController@update')->name('admin.users.address.update');
 		Route::post('/address-delete/{id}', 'Admin\UserAddressController@delete')->name('admin.users.address.delete');
+	});
+
+	Route::prefix('categories')->group(function(){
+		Route::get('/all', 'Admin\CategoryController@index')->name('admin.categories.index');
+		Route::get('/new', 'Admin\CategoryController@create')->name('admin.categories.new');
+		Route::post('/store', 'Admin\CategoryController@store')->name('admin.categories.store');
+		Route::get('/edit/{id}', 'Admin\CategoryController@edit')->name('admin.categories.edit');
+		Route::post('/update/{id}', 'Admin\CategoryController@update')->name('admin.categories.update');
+		Route::post('/delete/{id}', 'Admin\CategoryController@delete')->name('admin.categories.delete');
 	});
 });
 
