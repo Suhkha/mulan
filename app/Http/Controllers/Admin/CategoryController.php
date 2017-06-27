@@ -43,4 +43,16 @@ class CategoryController extends Controller
 		return redirect()->route('admin.categories.index')->with('success', 'Categoría eliminada correctamente.');
 	}
 
+	public function status($id){
+	            return "hola";
+	            
+	            // $category = Category::find($id);
+	 		
+	            // if($category != "") {
+	            //     $category->status = $category->status ? 0 : 1;
+	            //     $category->save();
+	            // }
+	            // return redirect()->route('admin.categories.index');
+	        }
+
 }
