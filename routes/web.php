@@ -46,10 +46,19 @@ Route::prefix('admin')->group(function(){
 	Route::prefix('users')->group(function(){
 		Route::get('/all', 'Admin\UserController@index')->name('admin.users.index');
 		Route::get('/new', 'Admin\UserController@create')->name('admin.users.new');
-		Route::post('/submit', 'Admin\UserController@store')->name('admin.users.submit');
+		Route::post('/store', 'Admin\UserController@store')->name('admin.users.store');
+		Route::get('/edit/{id}', 'Admin\UserController@edit')->name('admin.users.edit');
+		Route::post('/update/{id}', 'Admin\UserController@update')->name('admin.users.update');
+		Route::post('/delete/{id}', 'Admin\UserController@delete')->name('admin.users.delete');
+
+		Route::get('/new-address/{id}', 'Admin\UserAddressController@create')->name('admin.users.address.new');
+		Route::get('/address/{id}', 'Admin\UserAddressController@show')->name('admin.users.address');
+		Route::post('/address-store', 'Admin\UserAddressController@store')->name('admin.users.address.store');
+
+		Route::get('/address-edit/{id}', 'Admin\UserAddressController@edit')->name('admin.users.address.edit');
+		Route::post('/address-update/{id}', 'Admin\UserAddressController@update')->name('admin.users.address.update');
+		Route::post('/address-delete/{id}', 'Admin\UserAddressController@delete')->name('admin.users.address.delete');
 	});
-
-
 });
 
 

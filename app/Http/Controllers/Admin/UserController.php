@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests\AdminStoreUser;
 use App\User;
+use Mail;
+use App\Mail\AdminSendProvisionalPassword;
 
 class UserController extends Controller
 {
@@ -15,7 +17,7 @@ class UserController extends Controller
 	}
 
 	public function index(){
-		$users = User::all();
+		$users = User::paginate(5);
 		return view('admin.users.index', compact('users', $users));
     }
 
@@ -25,7 +27,25 @@ class UserController extends Controller
     }
 
     public function store(AdminStoreUser $request){
-    	User::create($request->all());
-    	return redirect()->route('admin.users.index');
+    	$user = User::create($request->all());
+        Mail::to($user)->send(new AdminSendProvisionalPassword($user));
+    	return redirect()->route('admin.users.index')->with('success', 'Usuario guardado correctamente.');
     }
+
+    public function edit($id){
+        $user = User::find($id);
+        return view('admin.users.edit')->with('user', $user);
+    }
+
+    public function update(Request $request, $id){
+        User::where('id', $id)->update($request->except('_token'));
+        return redirect()->route('admin.users.index')->with('success', 'Usuario actualizado correctamente.');
+    }
+
+    public function delete($id){
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->route('admin.users.index')->with('success', 'Usuario eliminado correctamente.');
+    }
+
 }

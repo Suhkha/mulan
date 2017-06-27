@@ -1,15 +1,15 @@
 @extends('layouts.inner--layout-admin')
-@section('title-section-admin')Nuevo cliente @stop
+@section('title-section-admin')Editar cliente <a href="javascript:history.back()" class="right"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Regresar</a>@stop
 
 @section('content-admin')
 	
-	<form class="form-horizontal" method="post" action="{{ route('admin.users.store') }}">
+	<form class="form-horizontal" method="post" action="{{ url('admin/users/update/'.$user->id) }}">
 		{{ csrf_field() }}
 		<fieldset>
 			<div class="form-group">
 				<label for="inputName" class="col-lg-2 col-lg-offset-2 control-label">Nombre</label>
 				<div class="col-lg-6">
-					<input type="text" class="form-control" id="inputName" name="name" placeholder="Nombre completo">
+					<input type="text" class="form-control" id="inputName" name="name" value="{{$user->name}}" placeholder="Nombre completo">
 					@if ($errors->has('name'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('name') }}</strong>
@@ -20,7 +20,7 @@
 			<div class="form-group">
 				<label for="inputEmail" class="col-lg-2 col-lg-offset-2 control-label">Email</label>
 				<div class="col-lg-6">
-					<input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email">
+					<input type="email" class="form-control" id="inputEmail" value="{{$user->email}}" name="email" placeholder="Email">
 					@if ($errors->has('email'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('email') }}</strong>
@@ -31,7 +31,7 @@
 			<div class="form-group">
 				<label for="inputPhone" class="col-lg-2 col-lg-offset-2 control-label">Teléfono</label>
 				<div class="col-lg-6">
-					<input type="text" class="form-control" id="inputPhone" name="phone" placeholder="Teléfono">
+					<input type="text" class="form-control" id="inputPhone" value="{{$user->phone}}" name="phone" placeholder="Teléfono">
 					@if ($errors->has('phone'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('phone') }}</strong>
