@@ -9,7 +9,6 @@
 		<thead>
 			<tr>
 				<th>#</th>
-				<th>ID Usuario</th>
 				<th>País</th>
 				<th>Nombre</th>
 				<th>Calle</th>
