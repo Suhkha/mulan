@@ -24,23 +24,31 @@ class CategoryController extends Controller
 
 	public function store(AdminStoreCategory $request){
 		$category = Category::create($request->all());
-		return redirect()->route('admin.categories.index')->with('success', 'Categoría guardada correctamente.');
+		return redirect()->route('admin.categories.index')
+				->with('success', 'Categoría guardada correctamente.');
 	}
 
 	public function edit($id){
 		$category = Category::find($id);
-		return view('admin.categories.edit')->with('category', $category);
+		return view('admin.categories.edit')
+				->with('category', $category);
 	}
 
 	public function update(Request $request, $id){
-		Category::where('id', $id)->update($request->except('_token'));
-		return redirect()->route('admin.categories.index')->with('success', 'Categoría actualizada correctamente.');
+		Category::where('id', $id)
+				->update($request->except('_token'));
+
+		return redirect()
+				->route('admin.categories.index')
+				->with('success', 'Categoría actualizada correctamente.');
 	}
 
 	public function delete($id){
 		$category = Category::find($id);
 		$category->delete();
-		return redirect()->route('admin.categories.index')->with('success', 'Categoría eliminada correctamente.');
+		return redirect()
+				->route('admin.categories.index')
+				->with('success', 'Categoría eliminada correctamente.');
 	}
 
 	public function status($id){
