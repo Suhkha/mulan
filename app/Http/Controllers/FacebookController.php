@@ -44,7 +44,8 @@ class FacebookController extends Controller
 
 					if($checkUser->email == $socialUser->getEmail()){
 
-						User::where('email', $socialUser->getEmail())->update(['facebook_id' => $socialUser->getId()]);
+						User::where('email', $socialUser->getEmail())
+								->update(['facebook_id' => $socialUser->getId()]);
 
 						auth()->login($checkUser);
 
