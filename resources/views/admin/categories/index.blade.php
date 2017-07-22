@@ -27,8 +27,10 @@
 						<td>{{$category->id}}</td>
 						<td>{{$category->name}}</td>
 						<td>
-							<form method="post" action="{{ url('/admin/categories/status/'.$category->id) }}">
-								<input type="checkbox" name="status" onClick="this.form.submit()" {{ $category->status ? 'checked' : '' }} />
+							<form method="post" action="{{ url('/admin/categories/status/') }}">
+								{{ csrf_field() }}
+								<input type="hidden" name="id" value="{{ $category->id }}">
+								<input type="checkbox" name="status" onClick="this.form.submit()"  {{ $category->status ? 'checked' : '' }} />
 							</form>
 						</td>
 						<td><a href="{{url('/admin/categories/edit/'.$category->id)}}">Editar</a></td>

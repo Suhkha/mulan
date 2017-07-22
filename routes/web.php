@@ -66,7 +66,7 @@ Route::prefix('admin')->group(function(){
 		Route::get('/edit/{id}', 'Admin\CategoryController@edit')->name('admin.categories.edit');
 		Route::post('/update/{id}', 'Admin\CategoryController@update')->name('admin.categories.update');
 		Route::post('/delete/{id}', 'Admin\CategoryController@delete')->name('admin.categories.delete');
-		Route::post('/status/{$id}', 'Admin\CategoryController@status')->name('admin.categories.status');
+		Route::post('/status', 'Admin\CategoryController@status')->name('admin.categories.status');
 	});
 });
 

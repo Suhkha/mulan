@@ -36,7 +36,7 @@ class CategoryController extends Controller
 
 	public function update(Request $request, $id){
 		Category::where('id', $id)
-				->update($request->except('_token'));
+		->update($request->except('_token'));
 
 		return redirect()
 				->route('admin.categories.index')
@@ -51,16 +51,15 @@ class CategoryController extends Controller
 				->with('success', 'Categoría eliminada correctamente.');
 	}
 
-	public function status($id){
-	            return "hola";
-	            
-	            // $category = Category::find($id);
-	 		
-	            // if($category != "") {
-	            //     $category->status = $category->status ? 0 : 1;
-	            //     $category->save();
-	            // }
-	            // return redirect()->route('admin.categories.index');
-	        }
+	public function status(Request $request){
+		$id = $request->input('id');
+		$category = Category::find($id);
 
+		if($category != "") {
+			$category->status = $category->status ? 0 : 1;
+			$category->save();
+		}
+
+		return redirect()->route('admin.categories.index');
+	}
 }
