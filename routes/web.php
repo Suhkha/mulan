@@ -42,7 +42,7 @@ Route::prefix('admin')->group(function(){
 	Route::post('/password/reset', 'Auth\AdminResetPasswordController@reset');
 	Route::get('/password/reset/{token}', 'Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');
 
-	// Customers
+	// Customers --users of the store
 	Route::prefix('users')->group(function(){
 		Route::get('/all', 'Admin\UserController@index')->name('admin.users.index');
 		Route::get('/new', 'Admin\UserController@create')->name('admin.users.new');
@@ -59,6 +59,7 @@ Route::prefix('admin')->group(function(){
 		Route::post('/address-delete/{id}', 'Admin\UserAddressController@delete')->name('admin.users.address.delete');
 	});
 
+	// Categories
 	Route::prefix('categories')->group(function(){
 		Route::get('/all', 'Admin\CategoryController@index')->name('admin.categories.index');
 		Route::get('/new', 'Admin\CategoryController@create')->name('admin.categories.new');
@@ -67,6 +68,17 @@ Route::prefix('admin')->group(function(){
 		Route::post('/update/{id}', 'Admin\CategoryController@update')->name('admin.categories.update');
 		Route::post('/delete/{id}', 'Admin\CategoryController@delete')->name('admin.categories.delete');
 		Route::post('/status', 'Admin\CategoryController@status')->name('admin.categories.status');
+	});
+
+	// Artisans
+	Route::prefix('artisans')->group(function(){
+		Route::get('/all', 'Admin\ArtisanController@index')->name('admin.artisans.index');
+		Route::get('/new', 'Admin\ArtisanController@create')->name('admin.artisans.new');
+		Route::post('/store', 'Admin\ArtisanController@store')->name('admin.artisans.store');
+		Route::get('/edit/{id}', 'Admin\ArtisanController@edit')->name('admin.artisans.edit');
+		Route::post('/update/{id}', 'Admin\ArtisanController@update')->name('admin.artisans.update');
+		Route::post('/delete/{id}', 'Admin\ArtisanController@delete')->name('admin.artisans.delete');
+		Route::post('/status', 'Admin\ArtisanController@status')->name('admin.artisans.status');
 	});
 });
 
