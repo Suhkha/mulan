@@ -25,7 +25,9 @@
 				@foreach($artisans as $artisan)
 					<tr>
 						<td>{{$artisan->id}}</td>
-						<td>{{$artisan->name}}</td>
+						<td>{{$artisan->name}}
+								<img src="{{ Storage::url($artisan->photo) }}">
+						</td>
 						<td>
 							<form method="post" action="{{ url('/admin/artisans/status/') }}">
 								{{ csrf_field() }}
