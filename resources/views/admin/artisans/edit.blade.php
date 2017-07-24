@@ -2,7 +2,7 @@
 
 @section('content-admin')
 
-	<form class="form-horizontal" method="post" enctype="multipart/form-data" action="{{ url('admin/categories/update/'.$category->id) }}">
+	<form class="form-horizontal" method="post" enctype="multipart/form-data" action="{{ url('admin/artisans/update/'.$artisan->id) }}">
 		{{ csrf_field() }}
 		<fieldset>
 			<div class="form-group">
@@ -17,7 +17,15 @@
 				</div>
 				<label for="inputPhoto" class="col-lg-2 control-label">Foto</label>
 				<div class="col-lg-3">
-					<input type="file" name="photo" placeholder="Foto del artesano" value="{{$artisan->photo}}">
+					<img src="{{ Storage::url($artisan->photo) }}" class="img-responsive img-thumbnail" width="150">
+					<p>
+						<small>{{$artisan->photo}}</small>
+					</p>
+					<div>
+					  <label for="photo" class="btn btn-primary">
+					  Seleccionar nueva foto</label>
+					  <input id="photo" type="file" style="visibility:hidden;" name="photo">
+					</div>
 					@if ($errors->has('photo'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('photo') }}</strong>

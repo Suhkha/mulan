@@ -43,8 +43,19 @@ class ArtisanController extends Controller
 
 	public function update(Request $request, $id){
 		Artisan::where('id', $id)
-				->update($request->except('_token'));
+				->update($request->except('_token', 'photo'));
+		
+		$file = $request->file('photo');
+		if($file != null){
+			$artisan = Artisan::find($id);
+			$path = $artisan['photo'];
+			\File::delete($path);
 
+			$path = $request->file('photo')->store('public');
+			Artisan::where('id', $id)
+					->update(array('photo' => $path));
+		}
+		
 		return redirect()
 				->route('admin.artisans.index')
 				->with('success', 'Artesano actualizado correctamente.');
@@ -53,7 +64,8 @@ class ArtisanController extends Controller
 	public function delete($id){
 		$artisan = Artisan::find($id);
 		$path = $artisan['photo'];
-		File::delete($path);
+		\File::delete($path);
+		
 		$artisan->delete();
 
 		return redirect()
