@@ -26,7 +26,7 @@ class ArtisanController extends Controller
 		$artisan = Artisan::create($request->except('photo'));		
 		
 		$id = $artisan->id;
-		$path = $request->file('photo')->store('artisans');
+		$path = $request->file('photo')->store('public');
 
 		Artisan::where('id', $id)
 				->update(array('photo' => $path));
@@ -53,6 +53,7 @@ class ArtisanController extends Controller
 	public function delete($id){
 		$artisan = Artisan::find($id);
 		$path = $artisan['photo'];
+		File::delete($path);
 		$artisan->delete();
 
 		return redirect()
