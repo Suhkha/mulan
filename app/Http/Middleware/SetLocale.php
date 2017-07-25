@@ -18,7 +18,6 @@ class SetLocale
      */
     public function handle($request, Closure $next)
     {
-
         if (Session::has('locale')) {
             $locale = Session::get('locale', Config::get('app.locale'));
         } else {

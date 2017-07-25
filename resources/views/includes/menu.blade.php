@@ -28,7 +28,13 @@
                             <li><a href="{{url('/admin/categories/all')}}">Ver Todo</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Artesanos</a></li>
+                   <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Artesanos <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{url('/admin/artisans/new')}}">Nuevo Artesano</a></li>
+                            <li><a href="{{url('/admin/artisans/all')}}">Ver Todo</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#">Productos</a></li>
                     <li><a href="#">Galería</a></li>
                     <li><a href="#">Videos</a></li>
