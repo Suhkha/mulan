@@ -1,4 +1,5 @@
 @extends('layouts.inner--layout-admin')
+@section('title-section-admin')Editar artesano <a href="javascript:history.back()" class="right"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Regresar</a>@stop
 
 @section('content-admin')
 

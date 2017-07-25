@@ -1,4 +1,4 @@
-<?php  
+<?php 
 
 return [
     'title_login_form' => 'Login',
@@ -7,5 +7,3 @@ return [
     'btn_login_form' => 'Login',
     'link_forgot_password_login_form' => 'Forgot Your Password?',
 ];
-
-?>

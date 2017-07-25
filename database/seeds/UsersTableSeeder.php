@@ -12,11 +12,10 @@ class UsersTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {   
+    {
         $faker = Faker::create();
 
         for ($i=1; $i < 30; $i++) {
-
             $user = new User();
             $user->name = $faker->name;
             $user->email = $faker->safeEmail;

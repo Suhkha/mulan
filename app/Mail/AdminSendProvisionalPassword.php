@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Mail;
+
 use App\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;

@@ -13,12 +13,10 @@ class AdminsTableSeeder extends Seeder
      */
     public function run()
     {
-
-            $main_admin = new Admin();
-            $main_admin->name = "Admin";
-            $main_admin->email = "admin@newsite.com";
-            $main_admin->password = crypt("hands2017", "");
-            $main_admin->save();
-
+        $main_admin = new Admin();
+        $main_admin->name = "Admin";
+        $main_admin->email = "admin@newsite.com";
+        $main_admin->password = crypt("hands2017", "");
+        $main_admin->save();
     }
 }

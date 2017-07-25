@@ -32,6 +32,5 @@ class AdminStoreAddress extends FormRequest
             'state' => 'required',
             'country' => 'required'
         ];
-
     }
 }

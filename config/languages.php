@@ -1,7 +1,5 @@
-<?php  
+<?php 
 return [
     'en' => 'English',
     'es' => 'Español',
 ];
-
-?>
