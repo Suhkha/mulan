@@ -24,7 +24,8 @@ class AdminStoreAddress extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'name' => 'required',            
+            'phone' => 'required',
             'address_1' => 'required',
             'address_2' => 'required',
             'zip' => 'required',

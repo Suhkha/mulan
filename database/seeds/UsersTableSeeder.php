@@ -20,7 +20,6 @@ class UsersTableSeeder extends Seeder
             $user->name = $faker->name;
             $user->email = $faker->safeEmail;
             $user->password = crypt("hands2017", "");
-            $user->phone = $faker->phoneNumber;
 
             $user->save();
         }

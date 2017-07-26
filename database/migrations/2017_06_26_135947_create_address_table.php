@@ -21,6 +21,7 @@ class CreateAddressTable extends Migration
                   ->on('users')
                   ->onDelete('CASCADE');
             $table->string('name');
+            $table->string('phone')->nullable();
             $table->string('address_1');
             $table->string('address_2');
             $table->string('zip');

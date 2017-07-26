@@ -26,7 +26,6 @@ class AdminStoreUser extends FormRequest
         return [
             'name' => 'required',
             'email' => 'required|unique:users',
-            'phone' => 'required',
             'name' => 'required',
         ];
     }

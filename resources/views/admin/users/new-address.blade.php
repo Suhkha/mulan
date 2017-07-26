@@ -9,7 +9,7 @@
 		<fieldset>
 			<div class="form-group">
 				<label for="inputName" class="col-lg-2 control-label">Nombre</label>
-				<div class="col-lg-8">
+				<div class="col-lg-3">
 					<input type="text" class="form-control" id="inputName" name="name" placeholder="Ejemp.: Dirección de mi casa...">
 					@if ($errors->has('name'))
 					    <span class="help-block">
@@ -17,6 +17,17 @@
 					    </span>
 					@endif
 				</div>
+
+				<label for="inputPhone" class="col-lg-2 control-label">Teléfono</label>
+				<div class="col-lg-3">
+					<input type="text" class="form-control" id="inputPhone" name="phone" placeholder="Teléfono">
+					@if ($errors->has('phone'))
+					    <span class="help-block">
+					        <strong>{{ $errors->first('phone') }}</strong>
+					    </span>
+					@endif
+				</div>
+
 			</div>
 			<div class="form-group">
 				<label for="inputAddress" class="col-lg-2 control-label">Calle y número</label>

@@ -32,8 +32,12 @@ class UserController extends Controller
     public function store(AdminStoreUser $request)
     {
         $user = User::create($request->all());
-        Mail::to($user)->send(new AdminSendProvisionalPassword($user));
-        return redirect()->route('admin.users.index')->with('success', 'Usuario guardado correctamente.');
+        Mail::to($user)
+            ->send(new AdminSendProvisionalPassword($user));
+        
+        return redirect()
+                ->route('admin.users.index')
+                ->with('success', 'Usuario guardado correctamente.');
     }
 
     public function edit($id)
@@ -44,14 +48,22 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
-        User::where('id', $id)->update($request->except('_token'));
-        return redirect()->route('admin.users.index')->with('success', 'Usuario actualizado correctamente.');
+        User::where('id', $id)
+                ->update($request
+                ->except('_token'));
+        
+        return redirect()
+                ->route('admin.users.index')
+                ->with('success', 'Usuario actualizado correctamente.');
     }
 
     public function delete($id)
     {
         $user = User::find($id);
         $user->delete();
-        return redirect()->route('admin.users.index')->with('success', 'Usuario eliminado correctamente.');
+        
+        return redirect()
+                ->route('admin.users.index')
+                ->with('success', 'Usuario eliminado correctamente.');
     }
 }
