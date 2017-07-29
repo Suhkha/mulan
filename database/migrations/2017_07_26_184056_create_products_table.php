@@ -20,6 +20,11 @@ class CreateProductsTable extends Migration
                   ->references('id')
                   ->on('artisans')
                   ->onDelete('CASCADE');
+            $table->integer('category_id')->unsigned();
+            $table->foreign('category_id')
+                  ->references('id')
+                  ->on('categories')
+                  ->onDelete('CASCADE');
             $table->string('name');
             $table->text('description');
             $table->integer('stock');

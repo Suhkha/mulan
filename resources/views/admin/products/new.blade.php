@@ -8,20 +8,23 @@
 		<fieldset>
 			<div class="form-group">
 				<label for="inputName" class="col-lg-2 control-label">Nombre</label>
-				<div class="col-lg-3">
-					<input type="text" class="form-control" id="inputName" name="name" placeholder="Nombre de categoría">
+				<div class="col-lg-8">
+					<input type="text" class="form-control" id="inputName" name="name" placeholder="Nombre de producto">
 					@if ($errors->has('name'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('name') }}</strong>
 					    </span>
 					@endif
 				</div>
+			</div>
+			<div class="form-group">
 				<label for="inputStatus" class="col-lg-2 control-label">Artesano</label>
 				<div class="col-lg-3">
 					<select name="artisan_id" class="form-control">
 						<option value="">Seleccionar</option>
-						<option value="1">Nombre artesano</option>
-						<option value="0">Nombre artesano</option>
+						@foreach($artisans as $artisan)
+							<option value="{{ $artisan->id }}">{{ $artisan->name }}</option>
+						@endforeach
 					</select>
 					@if ($errors->has('artisan_id'))
 					    <span class="help-block">
@@ -29,10 +32,25 @@
 					    </span>
 					@endif
 				</div>
+
+				<label for="inputStatus" class="col-lg-2 control-label">Categoría</label>
+				<div class="col-lg-3">
+					<select name="category_id" class="form-control">
+						<option value="">Seleccionar</option>
+						@foreach($categories as $category)
+							<option value="{{ $category->id }}">{{ $category->name }}</option>
+						@endforeach
+					</select>
+					@if ($errors->has('category_id'))
+					    <span class="help-block">
+					        <strong>{{ $errors->first('category_id') }}</strong>
+					    </span>
+					@endif
+				</div>
 			</div>
 			<div class="form-group">
 				<label for="inputDescription" class="col-lg-2 control-label">Descripción</label>
-				<div class="col-lg-3">
+				<div class="col-lg-8">
 					<textarea name="description" id="inputDescription" class="form-control" cols="30" rows="10" placeholder="Descripción en español"></textarea>
 					@if ($errors->has('description'))
 					    <span class="help-block">
@@ -40,8 +58,10 @@
 					    </span>
 					@endif
 				</div>
-				<label for="inputDescriptionEnglish" class="col-lg-2 control-label">Precio MXN</label>
-				<div class="col-lg-3">
+			</div>
+			<div class="form-group">
+				<label for="inputDescriptionEnglish" class="col-lg-2 control-label">Descripción en inglés</label>
+				<div class="col-lg-8">
 					<textarea name="description_english" id="inputDescriptionEnglish" class="form-control" cols="30" rows="10" placeholder="Descripción en inglés"></textarea>
 					@if ($errors->has('description_english'))
 					    <span class="help-block">
@@ -52,7 +72,7 @@
 			</div>
 
 			<div class="form-group">
-				<label for="inputPriceMXN" class="col-lg-2 control-label">Precio USD</label>
+				<label for="inputPriceMXN" class="col-lg-2 control-label">Precio MXN</label>
 				<div class="col-lg-3">
 					<input type="text" class="form-control" id="inputPriceMXN" name="price_mxn" placeholder="Precio en pesos mexicanos">
 					@if ($errors->has('price_mxn'))
@@ -61,7 +81,7 @@
 					    </span>
 					@endif
 				</div>
-				<label for="inputPriceUSD" class="col-lg-2 control-label">Descripción en inglés</label>
+				<label for="inputPriceUSD" class="col-lg-2 control-label">Precio USD</label>
 				<div class="col-lg-3">
 					<input type="text" class="form-control" id="inputPriceUSD" name="price_usd" placeholder="Precio en dólares">
 					@if ($errors->has('price_usd'))

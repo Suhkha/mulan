@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AdminStoreProduct;
 use App\Product;
+use App\Artisan;
+use App\Category;
 
 class ProductController extends Controller
 {
@@ -22,7 +24,12 @@ class ProductController extends Controller
 
     public function create()
     {
-        return view('admin.products.new');
+        $artisans = Artisan::all();
+        $categories = Category::all();
+        
+        return view('admin.products.new')
+                ->with('artisans', $artisans)
+                ->with('categories', $categories);
     }
 
     public function store(AdminStoreProduct $request)
