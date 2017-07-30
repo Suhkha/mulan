@@ -14,6 +14,17 @@ class ProductController extends Controller
     public function __construct()
     {
         $this->middleware('auth:admin');
+
+        
+        $categories = Category::all();
+    }
+
+    public function getArtisans(){
+        return $artisans = Artisan::all();
+    }
+
+    public function getCategories(){
+        return $artisans = Category::all();
     }
 
     public function index()
@@ -24,8 +35,8 @@ class ProductController extends Controller
 
     public function create()
     {
-        $artisans = Artisan::all();
-        $categories = Category::all();
+        $artisans = $this->getArtisans(); 
+        $categories = $this->getCategories();
 
         return view('admin.products.new')
                 ->with('artisans', $artisans)
@@ -41,10 +52,15 @@ class ProductController extends Controller
     }
 
     public function edit($id)
-    {
+    {   
         $product = Product::find($id);
+        $artisans = $this->getArtisans(); 
+        $categories = $this->getCategories();
+
         return view('admin.products.edit')
-                ->with('category', $product);
+                ->with('product', $product)
+                ->with('artisans', $artisans)
+                ->with('categories', $categories);
     }
 
     public function update(Request $request, $id)
