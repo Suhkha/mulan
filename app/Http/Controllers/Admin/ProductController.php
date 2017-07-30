@@ -26,7 +26,7 @@ class ProductController extends Controller
     {
         $artisans = Artisan::all();
         $categories = Category::all();
-        
+
         return view('admin.products.new')
                 ->with('artisans', $artisans)
                 ->with('categories', $categories);
@@ -35,8 +35,9 @@ class ProductController extends Controller
     public function store(AdminStoreProduct $request)
     {
         $product = Product::create($request->all());
-        return redirect()->route('admin.products.index')
-                ->with('success', 'Categoría guardada correctamente.');
+        return redirect()
+                ->route('admin.products.index')
+                ->with('success', 'Producto guardado correctamente.');
     }
 
     public function edit($id)
@@ -62,7 +63,7 @@ class ProductController extends Controller
         $product->delete();
         return redirect()
                 ->route('admin.products.index')
-                ->with('success', 'Categoría eliminada correctamente.');
+                ->with('success', 'Producto eliminado correctamente.');
     }
 
     public function status(Request $request)
@@ -77,6 +78,6 @@ class ProductController extends Controller
 
         return redirect()
                 ->route('admin.products.index')
-                ->with('success', 'Categoría actualizada correctamente.');
+                ->with('success', 'Producto actualizado correctamente.');
     }
 }
