@@ -10,12 +10,12 @@ class Product extends Model
 	
     protected $table = "products";
 
-    public function category()
+    public function getCurrentCategory()
     {
         return $this->belongsTo('App\Category');
     }
 
-    public function artisan()
+    public function getCurrentArtisan()
     {
         return $this->belongsTo('App\Artisan');
     }

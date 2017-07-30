@@ -21,7 +21,7 @@
 				<label for="inputStatus" class="col-lg-2 control-label">Artesano</label>
 				<div class="col-lg-3">
 					<select name="artisan_id" class="form-control">
-						<option value="{{ $product->artisan->id }}">{{ $product->artisan->name }}</option>
+						<option value="{{ $product->artisan->id }}">{{ $product->getCurrentArtisan->name }}</option>
 						@foreach($artisans as $artisan)
 							<option value="{{ $artisan->id }}">{{ $artisan->name }}</option>
 						@endforeach
@@ -36,7 +36,7 @@
 				<label for="inputStatus" class="col-lg-2 control-label">Categoría</label>
 				<div class="col-lg-3">
 					<select name="category_id" class="form-control">
-						<option value="{{ $product->category->id }}">{{ $product->category->name }}</option>
+						<option value="{{ $product->category->id }}">{{ $product->getCurrentCategory->name }}</option>
 						@foreach($categories as $category)
 							<option value="{{ $category->id }}">{{ $category->name }}</option>
 						@endforeach

@@ -43,7 +43,6 @@ class CategoryController extends Controller
     {
         Category::where('id', $id)
                 ->update($request->except('_token'));
-
         return redirect()
                 ->route('admin.categories.index')
                 ->with('success', 'Categoría actualizada correctamente.');
@@ -62,12 +61,11 @@ class CategoryController extends Controller
     {
         $id = $request->input('id');
         $category = Category::find($id);
-
-        if ($category != "") {
+        if ($category != "") 
+        {
             $category->status = $category->status ? 0 : 1;
             $category->save();
         }
-
         return redirect()
                 ->route('admin.categories.index')
                 ->with('success', 'Categoría actualizada correctamente.');

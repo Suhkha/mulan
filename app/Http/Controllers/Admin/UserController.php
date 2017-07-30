@@ -23,7 +23,6 @@ class UserController extends Controller
         return view('admin.users.index', compact('users', $users));
     }
 
-
     public function create()
     {
         return view('admin.users.new');
@@ -33,8 +32,7 @@ class UserController extends Controller
     {
         $user = User::create($request->all());
         Mail::to($user)
-            ->send(new AdminSendProvisionalPassword($user));
-        
+            ->send(new AdminSendProvisionalPassword($user));    
         return redirect()
                 ->route('admin.users.index')
                 ->with('success', 'Usuario guardado correctamente.');
@@ -51,7 +49,6 @@ class UserController extends Controller
         User::where('id', $id)
                 ->update($request
                 ->except('_token'));
-        
         return redirect()
                 ->route('admin.users.index')
                 ->with('success', 'Usuario actualizado correctamente.');
@@ -61,7 +58,6 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $user->delete();
-        
         return redirect()
                 ->route('admin.users.index')
                 ->with('success', 'Usuario eliminado correctamente.');

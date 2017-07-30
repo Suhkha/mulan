@@ -19,7 +19,6 @@ class UserAddressController extends Controller
     public function show($id)
     {
         $addresses = Address::where('user_id', '=', $id)->paginate(5);
-        
         return view('admin.users.address')
                 ->with(['addresses' => $addresses, 'id' => $id]);
     }
@@ -48,7 +47,6 @@ class UserAddressController extends Controller
     {
         Address::where('id', $id)
                 ->update($request->except('_token'));
-        
         return redirect()
                 ->route('admin.users.index')
                 ->with('success', 'Dirección actualizado correctamente.');
@@ -58,7 +56,6 @@ class UserAddressController extends Controller
     {
         $user = Address::find($id);
         $user->delete();
-        
         return redirect()
                 ->route('admin.users.index')
                 ->with('success', 'Dirección eliminada correctamente.');

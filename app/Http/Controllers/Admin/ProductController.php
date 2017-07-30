@@ -13,17 +13,16 @@ class ProductController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:admin');
-
-        
-        $categories = Category::all();
+        $this->middleware('auth:admin'); 
     }
 
-    public function getArtisans(){
+    public function getArtisans()
+    {
         return $artisans = Artisan::all();
     }
 
-    public function getCategories(){
+    public function getCategories()
+    {
         return $artisans = Category::all();
     }
 
@@ -37,7 +36,6 @@ class ProductController extends Controller
     {
         $artisans = $this->getArtisans(); 
         $categories = $this->getCategories();
-
         return view('admin.products.new')
                 ->with('artisans', $artisans)
                 ->with('categories', $categories);
@@ -56,7 +54,6 @@ class ProductController extends Controller
         $product = Product::find($id);
         $artisans = $this->getArtisans(); 
         $categories = $this->getCategories();
-
         return view('admin.products.edit')
                 ->with('product', $product)
                 ->with('artisans', $artisans)
@@ -67,7 +64,6 @@ class ProductController extends Controller
     {
         Product::where('id', $id)
                 ->update($request->except('_token'));
-
         return redirect()
                 ->route('admin.products.index')
                 ->with('success', 'Categoría actualizada correctamente.');
@@ -86,12 +82,11 @@ class ProductController extends Controller
     {
         $id = $request->input('id');
         $product = Product::find($id);
-
-        if ($product != "") {
+        if ($product != "") 
+        {
             $product->status = $product->status ? 0 : 1;
             $product->save();
         }
-
         return redirect()
                 ->route('admin.products.index')
                 ->with('success', 'Producto actualizado correctamente.');
