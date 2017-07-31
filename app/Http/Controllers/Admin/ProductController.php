@@ -49,6 +49,13 @@ class ProductController extends Controller
                 ->with('success', 'Producto guardado correctamente.');
     }
 
+    public function show($id)
+    {
+        $product = Product::find($id);
+        return view('admin.products.show')
+                ->with('product', $product);
+    }
+
     public function edit($id)
     {   
         $product = Product::find($id);
