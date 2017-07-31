@@ -28,7 +28,6 @@ class CreateAddressTable extends Migration
             $table->string('city');
             $table->string('state');
             $table->string('country');
-            $table->rememberToken();
             $table->timestamps();
         });
     }
