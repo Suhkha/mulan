@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/admin-theme.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/dropzone.css') }}" rel="stylesheet">
 </head>
 <body>
         @yield('content')
@@ -26,5 +27,6 @@
     <script>
         $('textarea').ckeditor();
     </script>
+    <script src="{{ asset('js/dropzone.js') }}"></script>
 </body>
 </html>
