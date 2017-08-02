@@ -92,4 +92,12 @@ Route::prefix('admin')->group(function () {
         Route::post('/delete/{id}', 'Admin\ProductController@delete')->name('admin.products.delete');
         Route::post('/status', 'Admin\ProductController@status')->name('admin.products.status');
     });
+
+    // Galleries
+    Route::prefix('galleries')->group(function () {
+        Route::get('/new/{id}', 'Admin\GalleryController@create')->name('admin.galleries.new');
+        Route::post('/store', 'Admin\GalleryController@store')->name('admin.galleries.store');
+        Route::get('/show/{id}', 'Admin\GalleryController@show')->name('admin.galleries.show');
+        Route::post('/delete/{id}', 'Admin\GalleryController@delete')->name('admin.galleries.delete');
+    });
 });

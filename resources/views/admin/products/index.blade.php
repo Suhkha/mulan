@@ -37,8 +37,8 @@
 							</form>
 						</td>
 						<td><a href="{{url('/admin/products/show/'.$product->id)}}">Ver producto</a></td>
-						<td><a href="{{url('/admin/gallery/show/'.$product->id)}}">Ver galería</a></td>
-						<td><a href="{{url('/admin/video/show/'.$product->id)}}">Ver video</a></td>
+						<td><a href="{{url('/admin/galleries/new/'.$product->id)}}">Agregar imágenes</a></td>
+						<td><a href="{{url('/admin/videos/new/'.$product->id)}}">Agregar video</a></td>
 						<td><a href="{{url('/admin/products/edit/'.$product->id)}}">Editar</a></td>
 						<td>
 							<form method="post" action="{{ url('/admin/products/delete/'.$product->id) }}">

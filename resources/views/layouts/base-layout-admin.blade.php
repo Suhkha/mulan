@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/admin-theme.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/dropzone.css') }}" rel="stylesheet">
 </head>
 <body>
         @yield('content')
@@ -20,11 +21,10 @@
     <!-- Scripts -->
     <script src="https://use.fontawesome.com/516987e026.js"></script>
     <script src="{{ asset('js/admin-vendor.min.js') }}"></script>
-    <script src="{{ asset('js/admin-main.js') }}"></script>
     <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
     <script src="/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script>
-    <script>
-        $('textarea').ckeditor();
-    </script>
+    <script> $('textarea').ckeditor();</script>
+    <script src="{{ asset('js/dropzone.js') }}"></script>
+    <script src="{{ asset('js/admin-main.js') }}"></script>
 </body>
 </html>
