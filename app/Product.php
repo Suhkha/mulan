@@ -19,4 +19,9 @@ class Product extends Model
     {
         return $this->belongsTo('App\Artisan');
     }
+
+    public function gallery()
+    {
+        return $this->hasMany('App\Gallery');
+    }
 }

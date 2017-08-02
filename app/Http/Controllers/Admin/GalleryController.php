@@ -19,10 +19,36 @@ class GalleryController extends Controller
         return $products = Product::all();
     }
 
-    public function create()
+    public function create($id)
     {
-    	$products = $this->getProducts();
+    	$product = Product::find($id);
         return view('admin.galleries.new')
-        		->with('products', $products);
+        		->with('product', $product);
     } 
+
+    public function store(Request $request)
+    {
+        $paths = $request->file('photo');
+        foreach ($paths as $path) 
+        {
+            $path_photo = $path->store('public');
+            $gallery = new Gallery;
+            $gallery->product_id = $request->product_id;
+            $gallery->photo = $path_photo;
+            $gallery->save();
+        }
+        return "true";
+    }
+
+    public function delete($id)
+    {
+        $gallery = Gallery::find($id);
+        $product_id = $gallery->product_id; 
+        $path = $gallery['photo'];
+        \Storage::delete($path);
+        $gallery->delete();
+        return redirect()
+                ->route('admin.products.show', ['id' => $product_id])
+                ->with('success', 'Imagen de producto eliminada correctamente.');
+    }
 }

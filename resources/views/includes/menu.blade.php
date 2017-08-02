@@ -39,8 +39,6 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Productos <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{{url('/admin/products/new')}}">Agregar Producto</a></li>
-                            <li><a href="{{url('/admin/galleries/new')}}">Agregar Galería</a></li>
-                            <li><a href="{{url('/admin/videos/new')}}">Agregar Video</a></li>
                             <li><a href="{{url('/admin/products/all')}}">Ver Todo</a></li>
                         </ul>
                     </li>
