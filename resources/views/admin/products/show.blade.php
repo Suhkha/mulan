@@ -45,13 +45,13 @@
 		</div>
 	</div>
 
-	<div id="#gallery" class="space-top">
+	<section id="#gallery" class="row space-top">
 		@if(count($product->gallery) > 0)
 			<h4 class="subtitle-section">Galería de imágenes</h4>
-			@foreach ($product->gallery as $path)
+			@foreach ($product->gallery as $gallery)
 				<div class="col-md-3 product__gallery">
-					<img src="{{ Storage::url($path->photo) }}"  class="img-responsive img-thumbnail product__gallery--img clearfix" alt="">
-					<form method="post" action="{{ url('/admin/galleries/delete/'.$path->id) }}">
+					<img src="{{ Storage::url($gallery->path) }}"  class="img-responsive img-thumbnail product__gallery--img clearfix" alt="">
+					<form method="post" action="{{ url('/admin/galleries/delete/'.$gallery->id) }}">
 						{{ csrf_field() }}
 						<a href="" class="delete-link" data-toggle="modal", data-target="#delete__confirm"  data-title="Eliminar imagen" data-message="¿Desea eliminar esta imagen?" data-btncancel="btn-default" data-btnaction="btn-danger" data-btntxt="Disable">Eliminar</a>
 					</form>
@@ -59,8 +59,29 @@
 				</div>
 			@endforeach
 		@else
-			<label for="">Aún no hay galería de imágenes. Agregar <a href="{{url('/admin/galleries/new/'.$product->id)}}">aquí</a>.</label>
+			<label>Aún no hay galería de imágenes. Agregar <a href="{{url('/admin/galleries/new/'.$product->id)}}">aquí</a>.</label>
 		@endif
-	</div>
+	</section>
+
+	<section id="#video" class="row space-top">
+		@if(count($product->video) > 0)
+			<h4 class="subtitle-section">Videos</h4>
+			@foreach ($product->video as $video)
+				<div class="col-md-4 product__video">
+					<video controls preload="auto">
+						<source src="{{ Storage::url($video->path) }}" type="video/{{$video->type}}"/>
+					</video>
+					<label>Formato:</label> <span>video/{{$video->type}} </span>
+					<form method="post" action="{{ url('/admin/videos/delete/'.$video->id) }}">
+						{{ csrf_field() }}
+						<a href="" class="delete-link" data-toggle="modal", data-target="#delete__confirm"  data-title="Eliminar video" data-message="¿Desea eliminar este video en formato video/{{$video->type}} ? Considere que se borrarán todos los formatos de video para este producto." data-btncancel="btn-default" data-btnaction="btn-danger" data-btntxt="Disable">Eliminar</a>
+					</form>
+					@include('includes.admin-modal-confirm-delete')
+				</div>
+			@endforeach
+		@else
+			<label>Aún no hay videos. Agregar <a href="{{url('/admin/videos/new/'.$product->id)}}">aquí</a>.</label>
+		@endif
+	</section>
 	
 @endsection

@@ -14,11 +14,6 @@ class GalleryController extends Controller
         $this->middleware('auth:admin'); 
     }
 
-    public function getProducts()
-    {
-        return $products = Product::all();
-    }
-
     public function create($id)
     {
     	$product = Product::find($id);
@@ -28,25 +23,25 @@ class GalleryController extends Controller
 
     public function store(Request $request)
     {
-        $paths = $request->file('photo');
+        $paths = $request->file('path');
         foreach ($paths as $path) 
         {
-            $path_photo = $path->store('public');
-            $gallery = new Gallery;
-            $gallery->product_id = $request->product_id;
-            $gallery->photo = $path_photo;
-            $gallery->save();
+            $path_image = $path->store('public');
+            $image = new Gallery;
+            $image->product_id = $request->product_id;
+            $image->path = $path_image;
+            $image->save();
         }
         return "true";
     }
 
     public function delete($id)
     {
-        $gallery = Gallery::find($id);
-        $product_id = $gallery->product_id; 
-        $path = $gallery['photo'];
+        $image = Gallery::find($id);
+        $product_id = $image->product_id; 
+        $path = $image['path'];
         \Storage::delete($path);
-        $gallery->delete();
+        $image->delete();
         return redirect()
                 ->route('admin.products.show', ['id' => $product_id])
                 ->with('success', 'Imagen de producto eliminada correctamente.');
