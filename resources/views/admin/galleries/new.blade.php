@@ -5,7 +5,7 @@
 	<a href="{{url('/admin/products/show/'.$product->id)}}" class="right space-bottom">
 		<i class="fa fa-pencil" aria-hidden="true"></i> Ver producto
 	</a>
-	<form class="form-horizontal dropzone" id="my-awesome-dropzone" method="post" action="{{ route('admin.galleries.store') }}">
+	<form class="form-horizontal dropzone" id="images-dropzone" method="post" action="{{ route('admin.galleries.store') }}">
 		{{ csrf_field() }}
 		<input type="hidden" name="product_id" value="{{ $product->id }}">
 		<div class="dz-message">

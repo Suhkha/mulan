@@ -24,4 +24,9 @@ class Product extends Model
     {
         return $this->hasMany('App\Gallery');
     }
+
+    public function video()
+    {
+        return $this->hasMany('App\Video');
+    }
 }
