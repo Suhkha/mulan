@@ -3,7 +3,7 @@
 
 @section('content-admin')
 	
-	<form class="form-horizontal" method="post" action="{{ route('admin.products.store') }}">
+	<form class="form-horizontal" method="post" action="{{ url('admin/products/update/'.$product->id) }}">
 		{{ csrf_field() }}
 		<fieldset>
 			<div class="form-group">

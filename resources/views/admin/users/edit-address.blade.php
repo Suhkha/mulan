@@ -18,7 +18,7 @@
 				</div>
 				<label for="inputPhone" class="col-lg-2 control-label">Teléfono</label>
 				<div class="col-lg-3">
-					<input type="text" class="form-control" id="inputPhone" value="{{$user->phone}}" name="phone" placeholder="Teléfono">
+					<input type="text" class="form-control" id="inputPhone" value="{{$address->phone}}" name="phone" placeholder="Teléfono">
 					@if ($errors->has('phone'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('phone') }}</strong>

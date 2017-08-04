@@ -19,3 +19,4 @@
  .product__gallery--img{ width: 200px; }
  .subtitle-section{ font-weight: bold; }
  .dropzone{margin-top: 40px !important;}
+ .product__video > video { width: 100%; }

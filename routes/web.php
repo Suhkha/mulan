@@ -100,4 +100,12 @@ Route::prefix('admin')->group(function () {
         Route::get('/show/{id}', 'Admin\GalleryController@show')->name('admin.galleries.show');
         Route::post('/delete/{id}', 'Admin\GalleryController@delete')->name('admin.galleries.delete');
     });
+
+    // Videos
+    Route::prefix('videos')->group(function () {
+        Route::get('/new/{id}', 'Admin\VideoController@create')->name('admin.videos.new');
+        Route::post('/store', 'Admin\VideoController@store')->name('admin.videos.store');
+        Route::get('/show/{id}', 'Admin\VideoController@show')->name('admin.videos.show');
+        Route::post('/delete/{id}', 'Admin\VideoController@delete')->name('admin.videos.delete');
+    });
 });

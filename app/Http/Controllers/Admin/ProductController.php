@@ -73,7 +73,7 @@ class ProductController extends Controller
                 ->update($request->except('_token'));
         return redirect()
                 ->route('admin.products.index')
-                ->with('success', 'Categoría actualizada correctamente.');
+                ->with('success', 'Producto actualizado correctamente.');
     }
 
     public function delete($id)
