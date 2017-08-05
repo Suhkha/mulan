@@ -37,7 +37,7 @@
 						<td>
 							<form method="post" action="{{ url('/admin/payment-methods/delete/'.$payment->id) }}">
 								{{ csrf_field() }}
-								<a href="" class="delete-link" data-toggle="modal", data-target="#delete__confirm"  data-title="Eliminar método de pago" data-message="¿Desea eliminar este método de pago?." data-btncancel="btn-default" data-btnaction="btn-danger" data-btntxt="Disable">Eliminar</a>
+								<a href="" class="delete-link" data-toggle="modal", data-target="#delete__confirm"  data-title="Eliminar método de pago" data-message="¿Desea eliminar este método de pago?" data-btncancel="btn-default" data-btnaction="btn-danger" data-btntxt="Disable">Eliminar</a>
 							</form>
 							@include('includes.admin-modal-confirm-delete')
 						</td>
