@@ -108,4 +108,28 @@ Route::prefix('admin')->group(function () {
         Route::get('/show/{id}', 'Admin\VideoController@show')->name('admin.videos.show');
         Route::post('/delete/{id}', 'Admin\VideoController@delete')->name('admin.videos.delete');
     });
+
+    // Payment Methods
+    Route::prefix('payment-methods')->group(function () {
+        Route::get('/all', 'Admin\PaymentMethodController@index')->name('admin.payment-methods.index');
+        Route::get('/new', 'Admin\PaymentMethodController@create')->name('admin.payment-methods.new');
+        Route::post('/store', 'Admin\PaymentMethodController@store')->name('admin.payment-methods.store');
+        Route::get('/show/{id}', 'Admin\PaymentMethodController@show')->name('admin.payment-methods.show');
+        Route::get('/edit/{id}', 'Admin\PaymentMethodController@edit')->name('admin.payment-methods.edit');
+        Route::post('/update/{id}', 'Admin\PaymentMethodController@update')->name('admin.payment-methods.update');
+        Route::post('/delete/{id}', 'Admin\PaymentMethodController@delete')->name('admin.payment-methods.delete');
+        Route::post('/status', 'Admin\PaymentMethodController@status')->name('admin.payment-methods.status');
+    });
+
+    // Shipping Methods
+    Route::prefix('shipping-methods')->group(function () {
+        Route::get('/all', 'Admin\ShippingMethodController@index')->name('admin.shipping-methods.index');
+        Route::get('/new', 'Admin\ShippingMethodController@create')->name('admin.shipping-methods.new');
+        Route::post('/store', 'Admin\ShippingMethodController@store')->name('admin.shipping-methods.store');
+        Route::get('/show/{id}', 'Admin\ShippingMethodController@show')->name('admin.shipping-methods.show');
+        Route::get('/edit/{id}', 'Admin\ShippingMethodController@edit')->name('admin.shipping-methods.edit');
+        Route::post('/update/{id}', 'Admin\ShippingMethodController@update')->name('admin.shipping-methods.update');
+        Route::post('/delete/{id}', 'Admin\ShippingMethodController@delete')->name('admin.shipping-methods.delete');
+        Route::post('/status', 'Admin\ShippingMethodController@status')->name('admin.shipping-methods.status');
+    });
 });
