@@ -86,7 +86,7 @@
                             {{ csrf_field() }}
                                <div class="form-group @if($errors->first('locale')) has-error @endif">
                                    <span aria-hidden="true"><i class="fa fa-flag"></i></span>
-                                    Select language/Seleccionar idioma
+                                    Select language please/Seleccionar idioma por favor
                                    <select name="locale" id="locale" onchange="this.form.submit()">
                                        <option value="">{{\App::getLocale()}}</option>
                                        <option value="es">ES</option>
