@@ -15,9 +15,9 @@ class AddressesTableSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        for ($i=1; $i < 10; $i++) {
+        for ($i=1; $i < 2; $i++) {
             $address = new Address();
-            $address->user_id = $faker->numberBetween(1,29);
+            $address->user_id = 1;
             $address->name = $faker->name." - house";
             $address->phone = $faker->phoneNumber;
             $address->address_1 = $faker->streetName." ".$faker->buildingNumber;
