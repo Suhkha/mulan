@@ -42,7 +42,16 @@
                             <li><a href="{{url('/admin/products/all')}}">Ver Todo</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Pedidos</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Configuraciones <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{url('/admin/payment-methods/new')}}">Agregar Método de Pago</a></li>
+                            <li><a href="{{url('/admin/payment-methods/all')}}">Ver Todos</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{{url('/admin/shipping-methods/new')}}">Agregar Método de Envío</a></li>
+                            <li><a href="{{url('/admin/shipping-methods/all')}}">Ver Todo</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#">Tienda</a></li>
                     <li><a href="#">Correos</a></li>
                 </ul>
