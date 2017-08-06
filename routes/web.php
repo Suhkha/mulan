@@ -114,7 +114,6 @@ Route::prefix('admin')->group(function () {
         Route::get('/all', 'Admin\PaymentMethodController@index')->name('admin.payment-methods.index');
         Route::get('/new', 'Admin\PaymentMethodController@create')->name('admin.payment-methods.new');
         Route::post('/store', 'Admin\PaymentMethodController@store')->name('admin.payment-methods.store');
-        Route::get('/show/{id}', 'Admin\PaymentMethodController@show')->name('admin.payment-methods.show');
         Route::get('/edit/{id}', 'Admin\PaymentMethodController@edit')->name('admin.payment-methods.edit');
         Route::post('/update/{id}', 'Admin\PaymentMethodController@update')->name('admin.payment-methods.update');
         Route::post('/delete/{id}', 'Admin\PaymentMethodController@delete')->name('admin.payment-methods.delete');
@@ -126,10 +125,15 @@ Route::prefix('admin')->group(function () {
         Route::get('/all', 'Admin\ShippingMethodController@index')->name('admin.shipping-methods.index');
         Route::get('/new', 'Admin\ShippingMethodController@create')->name('admin.shipping-methods.new');
         Route::post('/store', 'Admin\ShippingMethodController@store')->name('admin.shipping-methods.store');
-        Route::get('/show/{id}', 'Admin\ShippingMethodController@show')->name('admin.shipping-methods.show');
         Route::get('/edit/{id}', 'Admin\ShippingMethodController@edit')->name('admin.shipping-methods.edit');
         Route::post('/update/{id}', 'Admin\ShippingMethodController@update')->name('admin.shipping-methods.update');
         Route::post('/delete/{id}', 'Admin\ShippingMethodController@delete')->name('admin.shipping-methods.delete');
         Route::post('/status', 'Admin\ShippingMethodController@status')->name('admin.shipping-methods.status');
+    });
+
+    // Store Config
+    Route::prefix('store-config')->group(function () {
+        Route::get('/edit/{id}', 'Admin\StoreConfigController@edit')->name('admin.store-config.edit');
+        Route::post('/update/{id}', 'Admin\StoreConfigController@update')->name('admin.store-config.update');
     });
 });
