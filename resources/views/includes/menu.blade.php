@@ -52,8 +52,15 @@
                             <li><a href="{{url('/admin/shipping-methods/all')}}">Ver Todo</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Tienda</a></li>
-                    <li><a href="#">Correos</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tienda <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{url('/admin/store-config/edit/1')}}">Configurar datos de tienda</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{{url('/admin/pages/new')}}">Agregar página</a></li>
+                            <li><a href="{{url('/admin/pages/all')}}">Ver Todo</a></li>
+                        </ul>
+                    </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
