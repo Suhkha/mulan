@@ -11,25 +11,27 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
-
+//Change language
 Route::post('changelocale', 'LanguageController@index')->name('changelocale');
 
+Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/users/logout', 'Auth\LoginController@userLogout')->name('user.logout');
-
 
 //Facebook Connect
 Route::get('auth/facebook', 'FacebookController@redirectToProvider');
 Route::get('auth/facebook/callback', 'FacebookController@handleProviderCallback');
 
-////////////////////////////////// A D M I N //////////////////////////////////////////////////
+//Show pages
+Route::get('/page/{slug}', 'PageController@show');
 
+
+
+//-- Admin routes 
 Route::prefix('admin')->group(function () {
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
@@ -135,5 +137,16 @@ Route::prefix('admin')->group(function () {
     Route::prefix('store-config')->group(function () {
         Route::get('/edit/{id}', 'Admin\StoreConfigController@edit')->name('admin.store-config.edit');
         Route::post('/update/{id}', 'Admin\StoreConfigController@update')->name('admin.store-config.update');
+    });
+
+    // Pages
+    Route::prefix('pages')->group(function () {
+        Route::get('/all', 'Admin\PageController@index')->name('admin.pages.index');
+        Route::get('/new', 'Admin\PageController@create')->name('admin.pages.new');
+        Route::post('/store', 'Admin\PageController@store')->name('admin.pages.store');
+        Route::get('/edit/{id}', 'Admin\PageController@edit')->name('admin.pages.edit');
+        Route::post('/update/{id}', 'Admin\PageController@update')->name('admin.pages.update');
+        Route::post('/delete/{id}', 'Admin\PageController@delete')->name('admin.pages.delete');
+        Route::post('/status', 'Admin\PageController@status')->name('admin.pages.status');
     });
 });
