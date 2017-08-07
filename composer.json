@@ -50,5 +50,12 @@
         "preferred-install": "dist",
         "sort-packages": true,
         "optimize-autoloader": true
+    },
+    "extra": {
+        "heroku": {
+            "compile": [
+                "chmod 777 /storage/app/public"
+            ]
+        }
     }
 }
