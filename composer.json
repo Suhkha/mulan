@@ -44,18 +44,15 @@
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
             "php artisan optimize"
-        ]
+        ],
+        "post-install-cmd": [
+            "php artisan optimize",
+                        "chmod -R 777 storage/app/public",
+        ],
     },
     "config": {
         "preferred-install": "dist",
         "sort-packages": true,
         "optimize-autoloader": true
-    },
-    "extra": {
-        "heroku": {
-            "compile": [
-                "chmod 777 /storage/app/public"
-            ]
-        }
     }
 }
