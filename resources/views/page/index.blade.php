@@ -5,10 +5,10 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">{{ $page->title }}</div>
 
                 <div class="panel-body">
-                    {{trans('login.title_login_form')}}
+                    {!! $page->content !!}
                 </div>
             </div>
         </div>

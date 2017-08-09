@@ -11,25 +11,27 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
-
+//Change language
 Route::post('changelocale', 'LanguageController@index')->name('changelocale');
 
+Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/users/logout', 'Auth\LoginController@userLogout')->name('user.logout');
-
 
 //Facebook Connect
 Route::get('auth/facebook', 'FacebookController@redirectToProvider');
 Route::get('auth/facebook/callback', 'FacebookController@handleProviderCallback');
 
-////////////////////////////////// A D M I N //////////////////////////////////////////////////
+//Show pages
+Route::get('/page/{slug}', 'PageController@show');
 
+
+
+//-- Admin routes 
 Route::prefix('admin')->group(function () {
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
@@ -110,5 +112,44 @@ Route::prefix('admin')->group(function () {
         Route::post('/update/{id}', 'Admin\VideoController@update')->name('admin.videos.update');
         Route::post('/delete/{id}', 'Admin\VideoController@delete')->name('admin.videos.delete');
         Route::post('/status', 'Admin\VideoController@status')->name('admin.videos.status');
+    });
+
+    // Payment Methods
+    Route::prefix('payment-methods')->group(function () {
+        Route::get('/all', 'Admin\PaymentMethodController@index')->name('admin.payment-methods.index');
+        Route::get('/new', 'Admin\PaymentMethodController@create')->name('admin.payment-methods.new');
+        Route::post('/store', 'Admin\PaymentMethodController@store')->name('admin.payment-methods.store');
+        Route::get('/edit/{id}', 'Admin\PaymentMethodController@edit')->name('admin.payment-methods.edit');
+        Route::post('/update/{id}', 'Admin\PaymentMethodController@update')->name('admin.payment-methods.update');
+        Route::post('/delete/{id}', 'Admin\PaymentMethodController@delete')->name('admin.payment-methods.delete');
+        Route::post('/status', 'Admin\PaymentMethodController@status')->name('admin.payment-methods.status');
+    });
+
+    // Shipping Methods
+    Route::prefix('shipping-methods')->group(function () {
+        Route::get('/all', 'Admin\ShippingMethodController@index')->name('admin.shipping-methods.index');
+        Route::get('/new', 'Admin\ShippingMethodController@create')->name('admin.shipping-methods.new');
+        Route::post('/store', 'Admin\ShippingMethodController@store')->name('admin.shipping-methods.store');
+        Route::get('/edit/{id}', 'Admin\ShippingMethodController@edit')->name('admin.shipping-methods.edit');
+        Route::post('/update/{id}', 'Admin\ShippingMethodController@update')->name('admin.shipping-methods.update');
+        Route::post('/delete/{id}', 'Admin\ShippingMethodController@delete')->name('admin.shipping-methods.delete');
+        Route::post('/status', 'Admin\ShippingMethodController@status')->name('admin.shipping-methods.status');
+    });
+
+    // Store Config
+    Route::prefix('store-config')->group(function () {
+        Route::get('/edit/{id}', 'Admin\StoreConfigController@edit')->name('admin.store-config.edit');
+        Route::post('/update/{id}', 'Admin\StoreConfigController@update')->name('admin.store-config.update');
+    });
+
+    // Pages
+    Route::prefix('pages')->group(function () {
+        Route::get('/all', 'Admin\PageController@index')->name('admin.pages.index');
+        Route::get('/new', 'Admin\PageController@create')->name('admin.pages.new');
+        Route::post('/store', 'Admin\PageController@store')->name('admin.pages.store');
+        Route::get('/edit/{id}', 'Admin\PageController@edit')->name('admin.pages.edit');
+        Route::post('/update/{id}', 'Admin\PageController@update')->name('admin.pages.update');
+        Route::post('/delete/{id}', 'Admin\PageController@delete')->name('admin.pages.delete');
+        Route::post('/status', 'Admin\PageController@status')->name('admin.pages.status');
     });
 });
