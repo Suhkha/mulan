@@ -19,8 +19,9 @@ class CreateVideosTable extends Migration
             $table->foreign('product_id')
                   ->references('id')
                   ->on('products');
-            $table->string('path')->nullable();
-            $table->string('type')->nullable();
+            $table->string('name');
+            $table->string('url');
+            $table->string('status');
             $table->timestamps();
         });
     }

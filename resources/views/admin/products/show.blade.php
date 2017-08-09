@@ -62,26 +62,5 @@
 			<label>Aún no hay galería de imágenes. Agregar <a href="{{url('/admin/galleries/new/'.$product->id)}}">aquí</a>.</label>
 		@endif
 	</section>
-
-	<section id="#video" class="row space-top">
-		@if(count($product->video) > 0)
-			<h4 class="subtitle-section">Videos</h4>
-			@foreach ($product->video as $video)
-				<div class="col-md-4 product__video">
-					<video controls preload="auto">
-						<source src="{{ Storage::url($video->path) }}" type="video/{{$video->type}}"/>
-					</video>
-					<label>Formato:</label> <span>video/{{$video->type}} </span>
-					<form method="post" action="{{ url('/admin/videos/delete/'.$video->id) }}">
-						{{ csrf_field() }}
-						<a href="" class="delete-link" data-toggle="modal", data-target="#delete__confirm"  data-title="Eliminar video" data-message="¿Desea eliminar este video en formato video/{{$video->type}} ? Considere que se borrarán todos los formatos de video para este producto." data-btncancel="btn-default" data-btnaction="btn-danger" data-btntxt="Disable">Eliminar</a>
-					</form>
-					@include('includes.admin-modal-confirm-delete')
-				</div>
-			@endforeach
-		@else
-			<label>Aún no hay videos. Agregar <a href="{{url('/admin/videos/new/'.$product->id)}}">aquí</a>.</label>
-		@endif
-	</section>
 	
 @endsection

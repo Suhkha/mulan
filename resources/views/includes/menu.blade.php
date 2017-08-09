@@ -43,6 +43,13 @@
                         </ul>
                     </li>
                     <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Videos <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{url('/admin/videos/new')}}">Agregar Video</a></li>
+                            <li><a href="{{url('/admin/videos/all')}}">Ver Todo</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Configuraciones <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{{url('/admin/payment-methods/new')}}">Agregar Método de Pago</a></li>
