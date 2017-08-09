@@ -103,9 +103,12 @@ Route::prefix('admin')->group(function () {
 
     // Videos
     Route::prefix('videos')->group(function () {
-        Route::get('/new/{id}', 'Admin\VideoController@create')->name('admin.videos.new');
+        Route::get('/all', 'Admin\VideoController@index')->name('admin.videos.index');
+        Route::get('/new', 'Admin\VideoController@create')->name('admin.videos.new');
         Route::post('/store', 'Admin\VideoController@store')->name('admin.videos.store');
-        Route::get('/show/{id}', 'Admin\VideoController@show')->name('admin.videos.show');
+        Route::get('/edit/{id}', 'Admin\VideoController@edit')->name('admin.videos.edit');
+        Route::post('/update/{id}', 'Admin\VideoController@update')->name('admin.videos.update');
         Route::post('/delete/{id}', 'Admin\VideoController@delete')->name('admin.videos.delete');
+        Route::post('/status', 'Admin\VideoController@status')->name('admin.videos.status');
     });
 });

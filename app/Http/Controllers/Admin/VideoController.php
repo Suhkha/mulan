@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AdminStoreVideo;
 use App\Video;
 use App\Product;
 
@@ -14,29 +15,47 @@ class VideoController extends Controller
         $this->middleware('auth:admin'); 
     }
 
-    public function create($id)
+    public function index()
     {
-    	$product = Product::find($id);
+        $videos = Video::paginate(5);
+        return view('admin.videos.index', compact('videos', $videos));
+    }
+
+    public function getProducts()
+    {
+        return $products = Product::all();
+    }
+
+    public function create()
+    {
+        $products = $this->getProducts(); 
         return view('admin.videos.new')
-        		->with('product', $product);
+        		->with('products', $products);
     } 
 
-    public function store(Request $request)
+    public function store(AdminStoreVideo $request)
     {
-        $paths = $request->file('path');
-        foreach ($paths as $path) 
-        {
-            $path_video = $path->store('public');
-            $info_extension = pathinfo($path_video, PATHINFO_EXTENSION);
-            $extension  = ($info_extension == "ogv") ? "ogg" : $info_extension;
+        $video = Video::create($request->all());
+        return redirect()->route('admin.videos.index')
+                ->with('success', 'Video guardado correctamente.');
+    }
 
-            $video = new Video;
-            $video->product_id = $request->product_id;
-            $video->path = $path_video;
-            $video->type = $extension;
-            $video->save();
-        }
-        return "true";
+    public function edit($id)
+    {   
+        $video = Video::find($id);
+        $products = $this->getProducts(); 
+        return view('admin.videos.edit')
+                ->with('video', $video)
+                ->with('products', $products);
+    }
+
+    public function update(Request $request, $id)
+    {
+        Video::where('id', $id)
+                ->update($request->except('_token'));
+        return redirect()
+                ->route('admin.videos.index')
+                ->with('success', 'Video actualizado correctamente.');
     }
 
     public function delete($id)
@@ -47,7 +66,21 @@ class VideoController extends Controller
         \Storage::delete($path);
         $video->delete();
         return redirect()
-                ->route('admin.products.show', ['id' => $product_id])
+                ->route('admin.videos.index')
                 ->with('success', 'Video de producto eliminado correctamente.');
+    }
+
+    public function status(Request $request)
+    {
+        $id = $request->input('id');
+        $video = Video::find($id);
+        if ($video != "") 
+        {
+            $video->status = $video->status ? 0 : 1;
+            $video->save();
+        }
+        return redirect()
+                ->route('admin.videos.index')
+                ->with('success', 'Video actualizado correctamente.');
     }
 }
