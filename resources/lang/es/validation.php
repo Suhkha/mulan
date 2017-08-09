@@ -116,6 +116,19 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+      'password' => 'contraseña',
+      'password_confirmation' => 'confirmar contraseña',
+      'name' => 'nombre',
+      'email' => 'Email',
+      'address_1' => 'calle y número',
+      'address_2' => 'colonia/localidad',
+      'zip' => 'código postal',
+      'city' => 'ciudad',
+      'country' => 'país',
+      'state' => 'estado',
+      'phone' => 'teléfono',
+      'status' => 'estatus'
+    ],
 
 ];

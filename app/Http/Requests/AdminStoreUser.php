@@ -24,7 +24,7 @@ class AdminStoreUser extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'name' => 'required|max:100',
             'email' => 'required|unique:users',
             'name' => 'required',
         ];

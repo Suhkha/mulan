@@ -24,8 +24,8 @@ class AdminStorePaymentMethod extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'name_english' => 'required',
+            'name' => 'required|max:50',
+            'name_english' => 'required|max:50',
             'status' => 'required',
         ];
     }

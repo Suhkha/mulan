@@ -24,7 +24,7 @@ class AdminStoreVideo extends FormRequest
     public function rules()
     {
         return [          
-            'name' => 'required',
+            'name' => 'required|max:50',
             'url' => 'required',
             'status' => 'required' 
         ];

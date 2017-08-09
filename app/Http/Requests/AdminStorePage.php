@@ -24,8 +24,8 @@ class AdminStorePage extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
-            'title_english' => 'required',
+            'title' => 'required|max:100',
+            'title_english' => 'required|max:100',
             'slug' => 'required',
             'slug_english' => 'required',
             'content' => 'required',

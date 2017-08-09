@@ -26,7 +26,7 @@ class AdminStoreProduct extends FormRequest
         return [          
             'artisan_id' => 'required',
             'category_id' => 'required',
-            'name' => 'required',  
+            'name' => 'required|max:100',  
             'description' => 'required',
             'description_english' => 'required',
             'stock' => 'required',

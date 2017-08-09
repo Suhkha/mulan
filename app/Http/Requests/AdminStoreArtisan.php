@@ -24,7 +24,7 @@ class AdminStoreArtisan extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'name' => 'required|max:50',
             'photo' => 'required|image',
             'bio' => 'required',
             'bio_english' => 'required',

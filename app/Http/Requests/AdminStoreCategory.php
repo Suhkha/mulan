@@ -24,7 +24,7 @@ class AdminStoreCategory extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'name' => 'required|max:50',
             'status' => 'required',
         ];
     }
