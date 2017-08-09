@@ -10,7 +10,8 @@ class PageController extends Controller
 {
     public function show($slug)
     {
-        $page = Page::where('slug', '=', $slug)->first();
+        $page = Page::where('slug', '=', $slug)
+        			->orWhere('slug_english', $slug)->first();
         return view('page.index', compact('page', $page));
     }
 }

@@ -8,7 +8,11 @@
                 <div class="panel-heading">{{ $page->title }}</div>
 
                 <div class="panel-body">
-                    {!! $page->content !!}
+                    @if( \App::getLocale() == 'en' )
+                        {!! $page->content_english !!}
+                    @else
+                        {!! $page->content !!}
+                    @endif
                 </div>
             </div>
         </div>

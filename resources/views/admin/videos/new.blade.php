@@ -8,7 +8,7 @@
 			<div class="form-group">
 				<label for="inputName" class="col-lg-2 control-label">Nombre de video</label>
 				<div class="col-lg-3">
-					<input type="text" class="form-control" id="inputName" name="name" placeholder="Nombre de video">
+					<input type="text" class="form-control" id="inputName" name="name" placeholder="Nombre de video" value="{{ old('name') }}">
 					@if ($errors->has('name'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('name') }}</strong>
@@ -17,7 +17,7 @@
 				</div>
 				<label for="inputURL" class="col-lg-2 control-label">ID Video Youtube</label>
 				<div class="col-lg-3">
-					<input type="text" class="form-control" id="inputURL" name="url" placeholder="ID de video">
+					<input type="text" class="form-control" id="inputURL" name="url" placeholder="ID de video" value="{{ old('url') }}">
 					@if ($errors->has('url'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('url') }}</strong>

@@ -9,7 +9,7 @@
 			<div class="form-group">
 				<label for="inputName" class="col-lg-2 control-label">Nombre</label>
 				<div class="col-lg-3">
-					<input type="text" class="form-control" id="inputName" name="name" placeholder="Nombre de método de pago">
+					<input type="text" class="form-control" id="inputName" name="name" placeholder="Nombre de método de pago" value="{{ old('name') }}">
 					@if ($errors->has('name'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('name') }}</strong>
@@ -18,7 +18,7 @@
 				</div>
 				<label for="inputNameEnglish" class="col-lg-2 control-label">Nombre en inglés</label>
 				<div class="col-lg-3">
-					<input type="text" class="form-control" id="inputNameEnglish" name="name_english" placeholder="Nombre de método de pago en inglés">
+					<input type="text" class="form-control" id="inputNameEnglish" name="name_english" placeholder="Nombre de método de pago en inglés" value="{{ old('name_english') }}">
 					@if ($errors->has('name_english'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('name_english') }}</strong>

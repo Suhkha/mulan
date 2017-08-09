@@ -9,7 +9,7 @@
 			<div class="form-group">
 				<label for="inputName" class="col-lg-2 control-label">Nombre</label>
 				<div class="col-lg-3">
-					<input type="text" class="form-control" id="inputName" name="name" placeholder="Nombre de artesano">
+					<input type="text" class="form-control" id="inputName" name="name" placeholder="Nombre de artesano" value="{{ old('name') }}">
 					@if ($errors->has('name'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('name') }}</strong>
@@ -29,7 +29,7 @@
 			<div class="form-group">
 				<label for="inputBio" class="col-lg-2 control-label">Bio</label>
 				<div class="col-lg-9">
-					<textarea class="form-control" id="inputBio" name="bio" placeholder="Bio"></textarea>
+					<textarea class="form-control" id="inputBio" name="bio" placeholder="Bio">{{ old('bio') }}</textarea>
 					@if ($errors->has('bio'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('bio') }}</strong>
@@ -40,7 +40,7 @@
 			<div class="form-group">
 				<label for="inputBioEnglish" class="col-lg-2 control-label">Bio en inglés</label>
 				<div class="col-lg-9">
-					<textarea class="form-control" id="inputBioEnglish" name="bio_english" placeholder="Bio en inglés"></textarea>
+					<textarea class="form-control" id="inputBioEnglish" name="bio_english" placeholder="Bio en inglés">{{ old('bio_english') }}</textarea>
 					@if ($errors->has('bio_english'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('bio_english') }}</strong>

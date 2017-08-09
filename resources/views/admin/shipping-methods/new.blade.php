@@ -9,7 +9,7 @@
 			<div class="form-group">
 				<label for="inputName" class="col-lg-2 control-label">Nombre</label>
 				<div class="col-lg-3">
-					<input type="text" class="form-control" id="inputName" name="name" placeholder="Nombre de método de envío">
+					<input type="text" class="form-control" id="inputName" name="name" placeholder="Nombre de método de envío" value="{{ old('name') }}">
 					@if ($errors->has('name'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('name') }}</strong>

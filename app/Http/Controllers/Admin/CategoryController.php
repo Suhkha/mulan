@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AdminStoreCategory;
 use App\Category;
+use App\Product;
 
 class CategoryController extends Controller
 {
@@ -51,6 +52,9 @@ class CategoryController extends Controller
     public function delete($id)
     {
         $category = Category::find($id);
+        if ($category->categoriesRelatedToProducts()->count()) {
+           return redirect()->back()->with('error','No puedes borrar esta categoría. Tienes productos relacionados.');  
+        }
         $category->delete();
         return redirect()
                 ->route('admin.categories.index')

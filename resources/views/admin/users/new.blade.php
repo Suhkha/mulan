@@ -9,7 +9,7 @@
 			<div class="form-group">
 				<label for="inputName" class="col-lg-2 col-lg-offset-2 control-label">Nombre</label>
 				<div class="col-lg-6">
-					<input type="text" class="form-control" id="inputName" name="name" placeholder="Nombre completo">
+					<input type="text" class="form-control" id="inputName" name="name" placeholder="Nombre completo" value="{{ old('name') }}">
 					@if ($errors->has('name'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('name') }}</strong>
@@ -20,7 +20,7 @@
 			<div class="form-group">
 				<label for="inputEmail" class="col-lg-2 col-lg-offset-2 control-label">Email</label>
 				<div class="col-lg-6">
-					<input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email">
+					<input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email" value="{{ old('email') }}">
 					@if ($errors->has('email'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('email') }}</strong>

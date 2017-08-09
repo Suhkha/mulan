@@ -9,7 +9,7 @@
 			<div class="form-group">
 				<label for="inputName" class="col-lg-2 control-label">Nombre</label>
 				<div class="col-lg-8">
-					<input type="text" class="form-control" id="inputName" name="name" placeholder="Nombre de producto">
+					<input type="text" class="form-control" id="inputName" name="name" placeholder="Nombre de producto" value="{{ old('name') }}">
 					@if ($errors->has('name'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('name') }}</strong>
@@ -51,7 +51,7 @@
 			<div class="form-group">
 				<label for="inputDescription" class="col-lg-2 control-label">Descripción</label>
 				<div class="col-lg-8">
-					<textarea name="description" id="inputDescription" class="form-control" cols="30" rows="10" placeholder="Descripción en español"></textarea>
+					<textarea name="description" id="inputDescription" class="form-control" cols="30" rows="10" placeholder="Descripción en español">{{ old('description') }}</textarea>
 					@if ($errors->has('description'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('description') }}</strong>
@@ -62,7 +62,7 @@
 			<div class="form-group">
 				<label for="inputDescriptionEnglish" class="col-lg-2 control-label">Descripción en inglés</label>
 				<div class="col-lg-8">
-					<textarea name="description_english" id="inputDescriptionEnglish" class="form-control" cols="30" rows="10" placeholder="Descripción en inglés"></textarea>
+					<textarea name="description_english" id="inputDescriptionEnglish" class="form-control" cols="30" rows="10" placeholder="Descripción en inglés">{{ old('description_english') }}</textarea>
 					@if ($errors->has('description_english'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('description_english') }}</strong>
@@ -74,7 +74,7 @@
 			<div class="form-group">
 				<label for="inputPriceMXN" class="col-lg-2 control-label">Precio MXN</label>
 				<div class="col-lg-3">
-					<input type="text" class="form-control" id="inputPriceMXN" name="price_mxn" placeholder="Precio en pesos mexicanos">
+					<input type="text" class="form-control" id="inputPriceMXN" name="price_mxn" placeholder="Precio en pesos mexicanos" value="{{ old('price_mxn') }}">
 					@if ($errors->has('price_mxn'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('price_mxn') }}</strong>
@@ -83,7 +83,7 @@
 				</div>
 				<label for="inputPriceUSD" class="col-lg-2 control-label">Precio USD</label>
 				<div class="col-lg-3">
-					<input type="text" class="form-control" id="inputPriceUSD" name="price_usd" placeholder="Precio en dólares">
+					<input type="text" class="form-control" id="inputPriceUSD" name="price_usd" placeholder="Precio en dólares" value="{{ old('price_usd') }}">
 					@if ($errors->has('price_usd'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('price_usd') }}</strong>
@@ -94,7 +94,7 @@
 			<div class="form-group">
 				<label for="inputStock" class="col-lg-2 control-label">Stock</label>
 				<div class="col-lg-3">
-					<input type="number" class="form-control" id="inputStock" name="stock" placeholder="Stock">
+					<input type="number" class="form-control" id="inputStock" name="stock" placeholder="Stock" value="{{ old('stock') }}">
 					@if ($errors->has('stock'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('stock') }}</strong>

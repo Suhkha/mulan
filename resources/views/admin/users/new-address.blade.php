@@ -10,7 +10,7 @@
 			<div class="form-group">
 				<label for="inputName" class="col-lg-2 control-label">Nombre</label>
 				<div class="col-lg-3">
-					<input type="text" class="form-control" id="inputName" name="name" placeholder="Ejemp.: Dirección de mi casa...">
+					<input type="text" class="form-control" id="inputName" name="name" placeholder="Ejemp.: Dirección de mi casa..." value="{{ old('name') }}">
 					@if ($errors->has('name'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('name') }}</strong>
@@ -20,7 +20,7 @@
 
 				<label for="inputPhone" class="col-lg-2 control-label">Teléfono</label>
 				<div class="col-lg-3">
-					<input type="text" class="form-control" id="inputPhone" name="phone" placeholder="Teléfono">
+					<input type="text" class="form-control" id="inputPhone" name="phone" placeholder="Teléfono" value="{{old('name') }}">
 					@if ($errors->has('phone'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('phone') }}</strong>
@@ -32,7 +32,7 @@
 			<div class="form-group">
 				<label for="inputAddress" class="col-lg-2 control-label">Calle y número</label>
 				<div class="col-lg-3">
-					<input type="text" class="form-control" id="inputAddress" name="address_1" placeholder="Calle y número">
+					<input type="text" class="form-control" id="inputAddress" name="address_1" placeholder="Calle y número" value="{{ old('address_1') }}">
 					@if ($errors->has('address_1'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('address_1') }}</strong>
@@ -42,7 +42,7 @@
 
 				<label for="inputAddress2" class="col-lg-2 control-label">Colonia/Localidad</label>
 				<div class="col-lg-3">
-					<input type="text" class="form-control" id="inputAddress2" name="address_2" placeholder="Colonia/Localidad">
+					<input type="text" class="form-control" id="inputAddress2" name="address_2" placeholder="Colonia/Localidad" value="{{ old('address_2') }}">
 					@if ($errors->has('address_2'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('address_2') }}</strong>
@@ -54,7 +54,7 @@
 
 				<label for="inputZip" class="col-lg-2 control-label">Código Postal</label>
 				<div class="col-lg-3">
-					<input type="text" class="form-control" id="inputZip" name="zip" placeholder="Código Postal">
+					<input type="text" class="form-control" id="inputZip" name="zip" placeholder="Código Postal" value="{{ old('zip') }}">
 					@if ($errors->has('zip'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('zip') }}</strong>
@@ -64,7 +64,7 @@
 
 				<label for="inputCity" class="col-lg-2 control-label">Ciudad/Delegación</label>
 				<div class="col-lg-3">
-					<input type="text" class="form-control" id="inputCity" name="city" placeholder="Ciudad/Delegación">
+					<input type="text" class="form-control" id="inputCity" name="city" placeholder="Ciudad/Delegación" value="{{ old('city') }}">
 					@if ($errors->has('city'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('city') }}</strong>
@@ -75,7 +75,7 @@
 			<div class="form-group">
 				<label for="inputState" class="col-lg-2 control-label">Estado/Provincia/Región</label>
 				<div class="col-lg-3">
-					<input type="text" class="form-control" id="inputState" name="state" placeholder="Estado/Provincia/Región">
+					<input type="text" class="form-control" id="inputState" name="state" placeholder="Estado/Provincia/Región" value="{{ old('state') }}">
 					@if ($errors->has('state'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('state') }}</strong>
@@ -84,7 +84,7 @@
 				</div>
 				<label for="inputCountry" class="col-lg-2 control-label">País</label>
 				<div class="col-lg-3">
-					<input type="text" class="form-control" id="inputCountry" name="country" placeholder="País">
+					<input type="text" class="form-control" id="inputCountry" name="country" placeholder="País" value="{{ old('country') }}">
 					@if ($errors->has('country'))
 					    <span class="help-block">
 					        <strong>{{ $errors->first('country') }}</strong>
