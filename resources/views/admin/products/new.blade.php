@@ -101,7 +101,7 @@
 					    </span>
 					@endif
 				</div>
-				<label for="inputStatus" class="col-lg-2 control-label">Status</label>
+				<label for="inputStatus" class="col-lg-2 control-label">Estatus</label>
 				<div class="col-lg-3">
 					<select name="status" class="form-control">
 						<option value="">Seleccionar</option>

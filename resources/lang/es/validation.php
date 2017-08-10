@@ -129,6 +129,8 @@ return [
       'content_english' => 'contenido en inglés',
       'slug' => 'slug',
       'slug_english' => 'slug en inglés',
+      'price_mxn' => 'precio mxn',
+      'price_usd' => 'precio usd',
       'position' => 'posición',
       'email' => 'Email',
       'address_1' => 'calle y número',
