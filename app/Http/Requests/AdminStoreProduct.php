@@ -29,9 +29,9 @@ class AdminStoreProduct extends FormRequest
             'name' => 'required|max:100',  
             'description' => 'required',
             'description_english' => 'required',
-            'stock' => 'required',
-            'price_mxn' => 'required',
-            'price_usd' => 'required',
+            'stock' => 'required|numeric',
+            'price_mxn' => 'required|regex:/^\d*(\.\d{1,2})?$/',
+            'price_usd' => 'required|regex:/^\d*(\.\d{1,2})?$/',
             'status' => 'required' 
         ];
     }

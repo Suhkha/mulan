@@ -38,10 +38,10 @@
 	</div>
 	<div class="row">
 		<div class="col-md-6">
-			<label for="">Descripción: </label><br> {{ $product->description }}
+			<label for="">Descripción: </label><br> {!! $product->description !!}
 		</div>
 		<div class="col-md-6">
-			<label for="">Descripción en inglés: </label><br> {{ $product->description_english }}
+			<label for="">Descripción en inglés: </label><br> {!! $product->description_english !!}
 		</div>
 	</div>
 
