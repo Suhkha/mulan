@@ -26,7 +26,7 @@ class GalleryController extends Controller
         $paths = $request->file('path');
         foreach ($paths as $path) 
         {
-            $path_image = $path->store('public');
+            $path_image = $path->store('jajkiassets','s3');
             $image = new Gallery;
             $image->product_id = $request->product_id;
             $image->path = $path_image;

@@ -33,7 +33,7 @@ class StoreConfigController extends Controller
             $deletedFile = \Storage::delete($currentPath);
             // Then save the new logo from request
             $logo = $request->file('path')
-                            ->store('public');
+                            ->store('jajkiassets','s3');
             StoreConfig::where('id', $id)
                     ->update(array('path' => $logo));
         } 

@@ -30,7 +30,7 @@ class ArtisanController extends Controller
         $artisan = Artisan::create($request->except('photo'));
         $id = $artisan->id;      
         $path = $request->file('photo')
-                        ->store('public');
+                        ->store('jajkiassets','s3');
         Artisan::where('id', $id)
                 ->update(array('photo' => $path));
         return redirect()->route('admin.artisans.index')
@@ -57,7 +57,7 @@ class ArtisanController extends Controller
             $deletedFile = \Storage::delete($currentPath);
             // Then save the new photo from request
             $path = $request->file('photo')
-                            ->store('public');
+                            ->store('jajkiassets','s3');
             Artisan::where('id', $id)
                     ->update(array('photo' => $path));
         } 
