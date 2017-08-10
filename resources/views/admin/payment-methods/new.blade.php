@@ -32,7 +32,7 @@
 					<select name="status" class="form-control">
 						<option value="">Seleccionar</option>
 						<option value="1">Activo</option>
-						<option value="0">Desactivado</option>
+						<option value="0">Inactivo</option>
 					</select>
 					@if ($errors->has('status'))
 					    <span class="help-block">
