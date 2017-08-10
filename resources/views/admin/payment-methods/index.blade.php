@@ -26,7 +26,7 @@
 					<tr>
 						<td>{{$payment->id}}</td>
 						<td>{{$payment->name}}</td>
-						<td>
+						<td class="check">
 							<form method="post" action="{{ url('/admin/payment-methods/status/') }}">
 								{{ csrf_field() }}
 								<input type="hidden" name="id" value="{{ $payment->id }}">

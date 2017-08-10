@@ -26,7 +26,7 @@
 					<tr>
 						<td>{{$shipping->id}}</td>
 						<td>{{$shipping->name}}</td>
-						<td>
+						<td class="check">
 							<form method="post" action="{{ url('/admin/shipping-methods/status/') }}">
 								{{ csrf_field() }}
 								<input type="hidden" name="id" value="{{ $shipping->id }}">

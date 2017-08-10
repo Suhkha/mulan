@@ -26,7 +26,7 @@
 					<tr>
 						<td>{{$artisan->id}}</td>
 						<td>{{$artisan->name}}</td>
-						<td>
+						<td class="check__artisan">
 							<form method="post" action="{{ url('/admin/artisans/status/') }}">
 								{{ csrf_field() }}
 								<input type="hidden" name="id" value="{{ $artisan->id }}">

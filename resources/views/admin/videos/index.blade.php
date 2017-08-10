@@ -32,7 +32,7 @@
 							<iframe width="250" height="200" src="https://www.youtube.com/embed/{{$video->url}}" frameborder="0" allowfullscreen></iframe>
 						</td>
 						<td>{{ $video->product->name }}</td>
-						<td>
+						<td class="check">
 							<form method="post" action="{{ url('/admin/videos/status/') }}">
 								{{ csrf_field() }}
 								<input type="hidden" name="id" value="{{ $video->id }}">

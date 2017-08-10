@@ -20,3 +20,6 @@
  .subtitle-section{ font-weight: bold; }
  .dropzone{margin-top: 40px !important;}
  .product__video > video { width: 100%; }
+ .check, .check__artisan{ display: block; }
+ .check {margin-left: 20px;}
+ .check__artisan {margin-left: 50px;}

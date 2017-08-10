@@ -32,7 +32,7 @@
 					<tr>
 						<td>{{$category->id}}</td>
 						<td>{{$category->name}}</td>
-						<td>
+						<td class="check">
 							<form method="post" action="{{ url('/admin/categories/status/') }}">
 								{{ csrf_field() }}
 								<input type="hidden" name="id" value="{{ $category->id }}">

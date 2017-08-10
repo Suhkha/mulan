@@ -29,7 +29,7 @@
 					<tr>
 						<td>{{$product->id}}</td>
 						<td>{{$product->name}}</td>
-						<td>
+						<td class="check">
 							<form method="post" action="{{ url('/admin/products/status/') }}">
 								{{ csrf_field() }}
 								<input type="hidden" name="id" value="{{ $product->id }}">
